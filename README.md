@@ -21,12 +21,12 @@ A modern, responsive landing page for Jaysel Chit Funds built with Next.js 14 an
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/iamvasee/jaysel-chit-funds-landing.git
+git clone https://github.com/iamvasee/jaysel-chit-funds.git
 ```
 
 2. Install dependencies:
 ```bash
-cd jaysel-chit-funds-landing
+cd jaysel-chit-funds
 npm install
 ```
 
