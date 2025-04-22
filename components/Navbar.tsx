@@ -23,6 +23,22 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const offset = 80 // Offset for fixed header
+      const bodyRect = document.body.getBoundingClientRect().top
+      const elementRect = element.getBoundingClientRect().top
+      const elementPosition = elementRect - bodyRect
+      const offsetPosition = elementPosition - offset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
     <div className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
       <div className={`max-w-7xl mx-auto transition-all duration-300 ${
@@ -54,41 +70,35 @@ export default function Navbar() {
             </Link>
 
             {/* Navigation Links */}
-            <div className="hidden md:flex items-center space-x-2">
-              <Link 
-                href="#about" 
+            <div className="flex items-center space-x-4">
+              <button 
+                onClick={() => scrollToSection('about')}
                 className="px-5 py-2.5 text-[15px] font-medium text-gray-600 hover:text-gray-900 rounded-xl hover:bg-gray-50/80 transition-colors"
               >
                 About
-              </Link>
-              <Link 
-                href="#features" 
+              </button>
+              <button 
+                onClick={() => scrollToSection('how-it-works')}
                 className="px-5 py-2.5 text-[15px] font-medium text-gray-600 hover:text-gray-900 rounded-xl hover:bg-gray-50/80 transition-colors"
               >
-                Features
-              </Link>
-              <Link 
-                href="#pricing" 
+                How It Works
+              </button>
+              <button 
+                onClick={() => scrollToSection('faq')}
                 className="px-5 py-2.5 text-[15px] font-medium text-gray-600 hover:text-gray-900 rounded-xl hover:bg-gray-50/80 transition-colors"
               >
-                Pricing
-              </Link>
-              <Link 
-                href="#contact" 
+                FAQs
+              </button>
+              <button 
+                onClick={() => scrollToSection('plans')}
                 className="px-5 py-2.5 text-[15px] font-medium text-gray-600 hover:text-gray-900 rounded-xl hover:bg-gray-50/80 transition-colors"
               >
-                Contact
-              </Link>
+                Plans
+              </button>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex items-center space-x-5">
-              <Button 
-                variant="ghost"
-                className="hidden md:inline-flex px-6 py-2.5 text-[15px] font-medium hover:bg-gray-50/80"
-              >
-                Log in
-              </Button>
+            {/* CTA Button */}
+            <div className="flex items-center">
               <Button 
                 className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-6 py-2.5 text-[15px] font-medium rounded-xl"
               >

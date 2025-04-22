@@ -74,6 +74,6 @@ export default function Home() {
       <FAQSection />
       <ChitOptionsSection />
       <Footer />
-    </main>
+      </main>
   )
 }

@@ -82,7 +82,7 @@ export default function ChitFundSection() {
   ]
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section id="how-it-works" className="py-24 relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-gray-50" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))] from-primary/[0.03] via-transparent to-secondary/[0.03]" />
