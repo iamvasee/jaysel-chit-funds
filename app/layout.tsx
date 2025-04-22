@@ -1,22 +1,15 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({ 
+const hankenGrotesk = Hanken_Grotesk({ 
   subsets: ['latin'],
-  display: 'swap',
-  weight: ['400', '500'],
-  style: ['normal'],
-})
-
-const inter = Inter({ 
-  subsets: ['latin'],
-  display: 'swap',
+  variable: '--font-hanken-grotesk'
 })
 
 export const metadata: Metadata = {
-  title: "vibedev.ai",
-  description: "Experience the new way of coding with vibedev.ai. Transform your development workflow and vibe with your code like never before.",
+  title: "Jaysel Chit Funds - Build Wealth With Trust",
+  description: "Empowering dreams through transparent, flexible chit fund solutions. Join 100,000+ satisfied customers with Jaysel Chit Funds.",
   icons: {
     icon: [
       {
@@ -65,7 +58,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/images/idevibelogo.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={`${inter.className} bg-black bg-dotted-grid`}>{children}</body>
+      <body className={`${hankenGrotesk.variable} font-sans bg-black bg-dotted-grid`}>{children}</body>
     </html>
   );
 }
