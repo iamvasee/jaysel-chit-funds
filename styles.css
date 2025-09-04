@@ -154,6 +154,7 @@ nav {
     font-weight: 600;
     transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(37, 211, 102, 0.2); /* Subtle green shadow */
+    position: relative;
 }
 
 .nav-cta:hover {
@@ -165,6 +166,51 @@ nav {
 .nav-cta svg {
     width: 20px;
     height: 20px;
+    flex-shrink: 0;
+}
+
+.nav-cta-text {
+    white-space: nowrap;
+}
+
+/* Mobile styles - Circular button with icon only */
+@media (max-width: 768px) {
+    .nav-cta {
+        padding: 0.75rem;
+        width: 48px;
+        height: 48px;
+        justify-content: center;
+        border-radius: 50%;
+    }
+    
+    .nav-cta-text {
+        display: none;
+    }
+    
+    .nav-cta svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Tablet and desktop styles - Show text on larger screens */
+@media (min-width: 769px) {
+    .nav-cta {
+        padding: 0.75rem 1.5rem;
+        width: auto;
+        height: auto;
+        justify-content: center;
+    }
+    
+    .nav-cta-text {
+        display: inline;
+    }
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .mobile-menu-btn {
@@ -1622,6 +1668,45 @@ footer {
     width: 20px;
     height: 20px;
     fill: currentColor;
+    flex-shrink: 0;
+}
+
+.footer-cta-text {
+    white-space: nowrap;
+}
+
+/* Mobile styles for footer CTA - Circular button with icon only */
+@media (max-width: 768px) {
+    .footer-cta-button {
+        padding: 0.75rem;
+        width: 48px;
+        height: 48px;
+        justify-content: center;
+        border-radius: 50%;
+    }
+    
+    .footer-cta-text {
+        display: none;
+    }
+    
+    .footer-cta-button svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Tablet and desktop styles for footer CTA - Show text on larger screens */
+@media (min-width: 769px) {
+    .footer-cta-button {
+        padding: 0.75rem 1.5rem;
+        width: auto;
+        height: auto;
+        justify-content: center;
+    }
+    
+    .footer-cta-text {
+        display: inline;
+    }
 }
 
 .footer-bottom {
@@ -2286,6 +2371,10 @@ button {
         width: 95%;
         left: 2.5%;
         border-radius: 50px;
+    }
+
+    .nav-right {
+        gap: 0.75rem;
     }
 
     .mobile-menu-btn {
