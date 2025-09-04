@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://jaysel.in/</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jaysel.in/" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://jaysel.in/?lang=ta" />
+  </url>
+  
+  <!-- About Section -->
+  <url>
+    <loc>https://jaysel.in/#about</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jaysel.in/#about" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://jaysel.in/#about?lang=ta" />
+  </url>
+  
+  <!-- Plans Section -->
+  <url>
+    <loc>https://jaysel.in/#plans</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jaysel.in/#plans" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://jaysel.in/#plans?lang=ta" />
+  </url>
+  
+  <!-- FAQ Section -->
+  <url>
+    <loc>https://jaysel.in/#faq</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jaysel.in/#faq" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://jaysel.in/#faq?lang=ta" />
+  </url>
+  
+  <!-- Social Welfare Section -->
+  <url>
+    <loc>https://jaysel.in/#social-welfare</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jaysel.in/#social-welfare" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://jaysel.in/#social-welfare?lang=ta" />
+  </url>
+  
+  <!-- How It Works Section -->
+  <url>
+    <loc>https://jaysel.in/#how-it-works</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jaysel.in/#how-it-works" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://jaysel.in/#how-it-works?lang=ta" />
+  </url>
+  
+  <!-- Testimonials Section -->
+  <url>
+    <loc>https://jaysel.in/#testimonials</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jaysel.in/#testimonials" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://jaysel.in/#testimonials?lang=ta" />
+  </url>
+  
+  <!-- Surabhi Group Section -->
+  <url>
+    <loc>https://jaysel.in/#surabhi-group</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jaysel.in/#surabhi-group" />
+    <xhtml:link rel="alternate" hreflang="ta" href="https://jaysel.in/#surabhi-group?lang=ta" />
+  </url>
+  
+</urlset>
