@@ -1,23 +1,86 @@
-/* Reset and base styles */
+/**
+ * ========================================
+ * JAYSEL CHIT FUNDS LANDING PAGE - MAIN STYLESHEET
+ * ========================================
+ * 
+ * This file contains all styling for the landing page including:
+ * - CSS Custom Properties (CSS Variables) for consistent theming
+ * - Reset and base styles for cross-browser compatibility
+ * - Header and navigation styling with responsive behavior
+ * - Hero section with animations and floating elements
+ * - About section with grid layouts and feature cards
+ * - Surabhi Group section with company showcase
+ * - Social Welfare section with photo carousel
+ * - Plans section with pricing cards
+ * - How It Works section with step-by-step process
+ * - Testimonials section with customer reviews
+ * - FAQ section with accordion functionality
+ * - Footer with contact information and links
+ * - Modal system for detailed content display
+ * - Language toggle with sliding animation
+ * - Responsive design for all screen sizes
+ * 
+ * The stylesheet is organized into logical sections with clear comments
+ * for easy maintenance and updates.
+ */
+
+/* ========================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+   ========================================
+   
+   These variables define the design system and can be easily modified
+   to change the overall theme and color scheme of the website.
+   
+   Usage in index.html:
+   - All color values reference these variables
+   - Typography uses --font-family
+   - Spacing and sizing use these consistent values
+   - JavaScript can access these via getComputedStyle()
+*/
+
 :root {
+    /* Primary Brand Colors */
     --primary-color: #4F46E5;
     --secondary-color: #7C3AED;
     --accent-color: #EC4899;
+    
+    /* Text Colors */
     --text-color: #1F2937;
     --text-light: #6B7280;
+    --text-dark: #111827;
+    --text-gray: #4B5563;
+    
+    /* Background Colors */
     --background-light: #F9FAFB;
     --background-dark: #111827;
+    
+    /* Status Colors */
     --success-color: #10B981;
     --warning-color: #F59E0B;
     --error-color: #EF4444;
-    --font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    
+    /* Brand Specific Colors */
     --primary-red: #FF4E59;
     --primary-blue: #4014C6;
     --light-red: #FFF1F2;
     --light-blue: #F1F0FF;
-    --text-dark: #111827;
-    --text-gray: #4B5563;
+    
+    /* Typography */
+    --font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
+
+/* ========================================
+   RESET AND BASE STYLES
+   ========================================
+   
+   These styles provide cross-browser compatibility and establish
+   the foundation for all other styles.
+   
+   Elements affected in index.html:
+   - * (universal selector) - Resets all margins, padding, box-sizing
+   - body - Sets base typography and background
+   - .container - Provides consistent content width and centering
+*/
 
 * {
     margin: 0;
@@ -38,7 +101,31 @@ body {
     padding: 0 1rem;
 }
 
-/* Header and Navigation */
+/* ========================================
+   HEADER AND NAVIGATION STYLES
+   ========================================
+   
+   These styles create a modern, floating navigation bar with:
+   - Glass-morphism effect with backdrop blur
+   - Smooth animations and transitions
+   - Responsive behavior for mobile devices
+   - Language toggle with sliding animation
+   - WhatsApp contact button with responsive design
+   
+   Elements affected in index.html:
+   - <header> - Main navigation container
+   - .logo - Company logo and branding
+   - .nav-links - Navigation menu items
+   - .nav-cta - WhatsApp contact button
+   - .language-toggle - Language switcher
+   - .mobile-menu-btn - Mobile hamburger menu
+   
+   JavaScript interactions:
+   - .scrolled class added on scroll for enhanced styling
+   - .active class for mobile menu visibility
+   - Transform animations for hide/show behavior
+*/
+
 header {
     background-color: rgba(255, 255, 255, 0.7);
     -webkit-backdrop-filter: blur(8px);
@@ -213,6 +300,112 @@ nav {
     gap: 1rem;
 }
 
+/* ========================================
+   LANGUAGE TOGGLE STYLES
+   ========================================
+   
+   Advanced language toggle with sliding animation and modern UX:
+   - Globe icon with hover animations
+   - Smooth sliding thumb between languages
+   - Glass-morphism background effect
+   - Loading states and haptic feedback
+   - Responsive design for mobile devices
+   
+   Elements affected in index.html:
+   - .language-toggle - Main toggle container
+   - .toggle-icon - Globe icon container
+   - .globe-icon - SVG globe icon
+   - .toggle-slider - Sliding mechanism container
+   - .slider-track - Track for language options
+   - .slider-thumb - Sliding indicator
+   - .lang-text - Language text (EN/தமிழ்)
+   
+   JavaScript interactions:
+   - data-lang attribute controls thumb position
+   - .loading class for loading animations
+   - .active class for active language highlighting
+   - Hover effects and sound feedback
+*/
+
+.language-toggle {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+    gap: 0.5rem;
+    min-width: 80px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.language-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.language-toggle:active {
+    transform: translateY(0);
+    transition: all 0.1s ease;
+}
+
+.toggle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.globe-icon {
+    transition: all 0.3s ease;
+}
+
+.language-toggle:hover .globe-icon {
+    transform: rotate(15deg) scale(1.1);
+    color: var(--primary-color);
+}
+
+.language-toggle .lang-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Loading animation */
+.language-toggle.loading {
+    pointer-events: none;
+}
+
+.language-toggle.loading .globe-icon {
+    animation: spin 0.8s linear infinite;
+}
+
+.language-toggle.loading .slider-thumb {
+    animation: pulse 0.8s ease-in-out infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
 .mobile-menu-btn {
     display: none;
     flex-direction: column;
@@ -231,7 +424,35 @@ nav {
     transition: all 0.3s ease;
 }
 
-/* Hero Section */
+/* ========================================
+   HERO SECTION STYLES
+   ========================================
+   
+   The hero section is the main landing area with:
+   - Full viewport height with gradient background
+   - Two-column layout (content + image)
+   - Floating badges with animations
+   - Trust indicators and rating display
+   - Call-to-action buttons with hover effects
+   - Responsive design for all screen sizes
+   
+   Elements affected in index.html:
+   - .hero-section - Main hero container
+   - .hero-container - Content wrapper with grid layout
+   - .hero-content - Left column with text content
+   - .hero-image - Right column with image
+   - .floating-badges - Animated floating elements
+   - .trust-indicators - Rating and review display
+   - .trust-seals - Trust badges and certifications
+   - .cta-group - Call-to-action buttons
+   - .stats-row - Statistics display
+   
+   JavaScript interactions:
+   - Scroll-based animations
+   - Hover effects on floating elements
+   - Button click handlers for navigation
+*/
+
 .hero-section {
     min-height: 100vh;
     background: linear-gradient(135deg, #fff 0%, var(--light-blue) 100%);
@@ -2063,7 +2284,33 @@ button {
     }
 }
 
-/* FAQ Section */
+/* ========================================
+   FAQ SECTION STYLES
+   ========================================
+   
+   Accordion-style FAQ section with:
+   - Two-column grid layout for questions
+   - Smooth expand/collapse animations
+   - Hover effects and visual feedback
+   - Responsive single-column on mobile
+   - Clean typography and spacing
+   
+   Elements affected in index.html:
+   - .faq-section - Main FAQ container
+   - .faq-header - Section title and description
+   - .faq-grid - Two-column grid layout
+   - .faq-column - Individual column containers
+   - .faq-item - Individual FAQ item container
+   - .faq-question - Clickable question header
+   - .faq-answer - Expandable answer content
+   
+   JavaScript interactions:
+   - .active class toggles FAQ item expansion
+   - Click handlers on .faq-question elements
+   - Smooth height transitions for answers
+   - Arrow rotation animation on active items
+*/
+
 .faq-section {
     padding: 120px 0;
     background: linear-gradient(135deg, #fff 0%, var(--light-blue) 100%);
@@ -2377,6 +2624,17 @@ button {
         gap: 0.75rem;
     }
 
+    .language-toggle {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.75rem;
+        min-width: 70px;
+        gap: 0.4rem;
+    }
+
+    .language-toggle .lang-text {
+        font-size: 0.7rem;
+    }
+
     .mobile-menu-btn {
         display: flex;
     }
@@ -2679,7 +2937,38 @@ button {
 
 /* ========================================
    SOCIAL WELFARE SECTION STYLES
-   ======================================== */
+   ========================================
+   
+   Social welfare showcase section with:
+   - Photo carousel with touch/swipe support
+   - Impact statistics with hover animations
+   - Two-column content layout
+   - Commitment highlights with gradient background
+   - Responsive design for all devices
+   
+   Elements affected in index.html:
+   - .social-welfare-section - Main section container
+   - .social-welfare-header - Section title and description
+   - .social-impact-stats - Statistics grid display
+   - .social-welfare-content - Two-column content layout
+   - .welfare-story - Left column story content
+   - .welfare-features - Right column feature list
+   - .photo-gallery - Carousel container
+   - .carousel-container - Carousel wrapper
+   - .carousel-track - Sliding track for photos
+   - .carousel-slide - Individual photo slides
+   - .carousel-btn - Navigation buttons
+   - .carousel-indicators - Dot indicators
+   - .social-commitment - Bottom commitment section
+   
+   JavaScript interactions:
+   - Carousel navigation (prev/next buttons)
+   - Touch/swipe gestures for mobile
+   - Auto-play functionality with pause on hover
+   - Keyboard navigation (arrow keys)
+   - Indicator click handlers
+   - Smooth slide transitions
+*/
 
 .social-welfare-section {
     padding: 5rem 0;
@@ -3129,4 +3418,67 @@ button {
     .welfare-feature .feature-icon {
         align-self: center;
     }
-} 
+}
+
+/**
+ * ========================================
+ * SUMMARY OF CSS ARCHITECTURE
+ * ========================================
+ * 
+ * This stylesheet provides comprehensive styling for the
+ * Jaysel Chit Funds landing page with the following structure:
+ * 
+ * 1. DESIGN SYSTEM:
+ *    - CSS Custom Properties for consistent theming
+ *    - Color palette with brand-specific variables
+ *    - Typography system with fallback fonts
+ *    - Spacing and sizing conventions
+ * 
+ * 2. LAYOUT SECTIONS:
+ *    - Header: Floating navigation with glass-morphism
+ *    - Hero: Full-viewport landing with animations
+ *    - About: Company information with feature cards
+ *    - Surabhi Group: Company showcase with achievements
+ *    - Social Welfare: Photo carousel and impact stats
+ *    - Plans: Pricing cards with feature lists
+ *    - How It Works: Step-by-step process display
+ *    - Testimonials: Customer review cards
+ *    - FAQ: Accordion-style question/answer system
+ *    - Footer: Contact information and links
+ * 
+ * 3. INTERACTIVE COMPONENTS:
+ *    - Language Toggle: Sliding animation with globe icon
+ *    - FAQ Accordion: Smooth expand/collapse animations
+ *    - Photo Carousel: Touch/swipe with navigation controls
+ *    - Modal System: Overlay popups with backdrop blur
+ *    - Mobile Menu: Hamburger animation and slide-out
+ * 
+ * 4. RESPONSIVE DESIGN:
+ *    - Mobile-first approach with progressive enhancement
+ *    - Breakpoints: 480px, 768px, 1024px, 1200px
+ *    - Flexible grid systems and flexbox layouts
+ *    - Touch-friendly button sizes and spacing
+ * 
+ * 5. ANIMATIONS & TRANSITIONS:
+ *    - Smooth hover effects and state changes
+ *    - Loading animations for interactive elements
+ *    - Scroll-based animations and parallax effects
+ *    - CSS transforms for performance optimization
+ * 
+ * 6. ACCESSIBILITY FEATURES:
+ *    - High contrast ratios for text readability
+ *    - Focus states for keyboard navigation
+ *    - Screen reader friendly markup
+ *    - Touch targets meet minimum size requirements
+ * 
+ * 7. PERFORMANCE OPTIMIZATIONS:
+ *    - Hardware-accelerated animations using transforms
+ *    - Efficient selectors and minimal specificity
+ *    - CSS Grid and Flexbox for complex layouts
+ *    - Optimized media queries for responsive behavior
+ * 
+ * The stylesheet is organized for maintainability with clear
+ * section headers, consistent naming conventions, and logical
+ * grouping of related styles. All interactive elements include
+ * proper hover, focus, and active states for optimal UX.
+ */ 
