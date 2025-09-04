@@ -771,6 +771,11 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextContent('footer-terms', lang.footer.termsOfService);
         updateTextContent('footer-copyright', lang.footer.copyright);
         
+        // Update feedback section
+        updateTextContent('feedback-title', lang.feedback.title);
+        updateTextContent('feedback-description', lang.feedback.description);
+        updateTextContent('feedback-button-text', lang.feedback.buttonText);
+        
         // Update document language and direction
         document.documentElement.lang = currentLang;
         if (currentLang === 'ta') {

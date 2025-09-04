@@ -268,6 +268,13 @@ const translations = {
             privacyPolicy: "Privacy Policy",
             termsOfService: "Terms of Service",
             copyright: "© 2025 Jaysel Chit Funds Private Limited."
+        },
+        
+        // Feedback Section
+        feedback: {
+            title: "Share Your Experience",
+            description: "Help others by sharing your experience with Jaysel Chit Funds. Your feedback helps us improve our services.",
+            buttonText: "Write a Review"
         }
     },
     
@@ -520,6 +527,13 @@ const translations = {
             privacyPolicy: "தனியுரிமைக் கொள்கை",
             termsOfService: "சேவை விதிமுறைகள்",
             copyright: "© 2025 ஜெய்செல் சிட் ஃபண்ட்ஸ் பிரைவேட் லிமிடெட்."
+        },
+        
+        // Feedback Section
+        feedback: {
+            title: "உங்கள் அனுபவத்தை பகிர்ந்து கொள்ளுங்கள்",
+            description: "ஜெய்செல் சிட் ஃபண்ட்ஸுடன் உங்கள் அனுபவத்தை பகிர்ந்து கொண்டு மற்றவர்களுக்கு உதவுங்கள். உங்கள் கருத்து எங்கள் சேவைகளை மேம்படுத்த உதவுகிறது.",
+            buttonText: "விமர்சனம் எழுதுங்கள்"
         }
     }
 };

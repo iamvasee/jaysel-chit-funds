@@ -3420,6 +3420,161 @@ button {
     }
 }
 
+/* ========================================
+   FEEDBACK SECTION - Reviews and ratings collection
+   ======================================== */
+.feedback-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.feedback-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23e2e8f0" opacity="0.3"/><circle cx="75" cy="75" r="1" fill="%23cbd5e1" opacity="0.2"/><circle cx="50" cy="10" r="0.5" fill="%23f1f5f9" opacity="0.4"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.feedback-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.feedback-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.feedback-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.feedback-text p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.feedback-action {
+    flex-shrink: 0;
+}
+
+.feedback-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #e53e3e 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(255, 78, 89, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.feedback-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.feedback-button:hover::before {
+    left: 100%;
+}
+
+.feedback-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 78, 89, 0.4);
+    background: linear-gradient(135deg, #e53e3e 0%, var(--primary-color) 100%);
+}
+
+.feedback-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(255, 78, 89, 0.3);
+}
+
+.feedback-button svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.feedback-button:hover svg {
+    transform: scale(1.1);
+}
+
+/* Responsive Design for Feedback Section */
+@media (max-width: 768px) {
+    .feedback-section {
+        padding: 3rem 0;
+    }
+    
+    .feedback-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .feedback-text h2 {
+        font-size: 2rem;
+    }
+    
+    .feedback-text p {
+        font-size: 1rem;
+    }
+    
+    .feedback-button {
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .feedback-section {
+        padding: 2.5rem 0;
+    }
+    
+    .feedback-text h2 {
+        font-size: 1.75rem;
+    }
+    
+    .feedback-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        gap: 0.5rem;
+    }
+    
+    .feedback-button svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
 /**
  * ========================================
  * SUMMARY OF CSS ARCHITECTURE
