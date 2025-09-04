@@ -181,4 +181,140 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+
+// Social Welfare Carousel
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('social-carousel');
+    const prevBtn = document.getElementById('social-prev');
+    const nextBtn = document.getElementById('social-next');
+    const indicatorsContainer = document.getElementById('social-indicators');
+    
+    if (!carousel || !prevBtn || !nextBtn || !indicatorsContainer) return;
+    
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+    
+    // Create indicators
+    function createIndicators() {
+        indicatorsContainer.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+            const indicator = document.createElement('button');
+            indicator.className = 'carousel-indicator';
+            if (i === 0) indicator.classList.add('active');
+            indicator.addEventListener('click', () => goToSlide(i));
+            indicatorsContainer.appendChild(indicator);
+        }
+    }
+    
+    // Update carousel position
+    function updateCarousel() {
+        const translateX = -currentSlide * 100;
+        carousel.style.transform = `translateX(${translateX}%)`;
+        
+        // Update indicators
+        const indicators = indicatorsContainer.querySelectorAll('.carousel-indicator');
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentSlide);
+        });
+    }
+    
+    // Go to specific slide
+    function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        updateCarousel();
+    }
+    
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    // Auto-play (optional)
+    let autoPlayInterval;
+    
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    }
+    
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+    
+    // Start auto-play
+    startAutoPlay();
+    
+    // Pause auto-play on hover
+    const carouselContainer = carousel.closest('.carousel-container');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+        carouselContainer.addEventListener('mouseleave', startAutoPlay);
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (carouselContainer && carouselContainer.matches(':hover')) {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                nextSlide();
+            }
+        }
+    });
+    
+    // Touch/swipe support
+    let startX = 0;
+    let startY = 0;
+    let isDragging = false;
+    
+    carousel.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        isDragging = true;
+        stopAutoPlay();
+    });
+    
+    carousel.addEventListener('touchmove', function(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+    });
+    
+    carousel.addEventListener('touchend', function(e) {
+        if (!isDragging) return;
+        
+        const endX = e.changedTouches[0].clientX;
+        const endY = e.changedTouches[0].clientY;
+        const diffX = startX - endX;
+        const diffY = startY - endY;
+        
+        // Only trigger swipe if horizontal movement is greater than vertical
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+            if (diffX > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+        
+        isDragging = false;
+        startAutoPlay();
+    });
+    
+    // Initialize
+    createIndicators();
+    updateCarousel();
 }); 
