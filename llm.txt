@@ -1,0 +1,84 @@
+# Jaysel Chit Funds - AI Crawler Information
+
+## Website Overview
+This is the official website for Jaysel Chit Funds Private Limited, a trusted chit fund company operating in Tamil Nadu, India. We are part of the prestigious Surabhi Group with over 50 years of excellence in financial services.
+
+## Business Information
+- **Company Name**: Jaysel Chit Funds Private Limited
+- **Industry**: Financial Services - Chit Funds
+- **Location**: Tamil Nadu, India
+- **Parent Company**: Surabhi Group
+- **Years of Experience**: 50+ years
+- **Regulatory Compliance**: Registered under Chit Funds Act, 1982
+
+## Services Offered
+- **Flexible Chit Fund Plans**: Starter (₹10,000-₹50,000), Growth (₹50,000-₹2,00,000), Premium (₹2,00,000-₹10,00,000)
+- **Secure Savings**: Regulated and secure investment options
+- **Quick Access**: Easy withdrawal and loan facilities
+- **Tax Benefits**: Tax-saving investment opportunities
+- **Social Welfare**: 30% of profits dedicated to social welfare initiatives
+
+## Key Features
+- **Regulated**: Fully compliant with Chit Funds Act, 1982
+- **Secure**: Government-regulated and secure
+- **Quick Access**: Easy withdrawal and loan facilities
+- **Tax Benefits**: Tax-saving investment opportunities
+- **Social Impact**: Committed to social welfare with 30% profit allocation
+
+## Social Welfare Initiatives
+- **30% Profit Allocation**: Dedicated to social welfare
+- **Educational Support**: Visited 15 government village schools in Tiruppur district (FY 2024-25)
+- **Community Impact**: Supporting local communities and education
+- **Transparency**: Regular updates on social welfare activities
+
+## Contact Information
+- **WhatsApp**: +91 99652 29955
+- **Business Hours**: Monday-Friday (10am-6pm), Saturday (10am-2pm)
+- **Website**: https://jaysel.in
+- **Language Support**: English and Tamil
+
+## Target Audience
+- Individuals seeking secure savings options
+- People looking for tax-saving investments
+- Community members interested in social welfare
+- Tamil Nadu residents and businesses
+- Anyone interested in regulated chit fund services
+
+## Key Differentiators
+- **50+ Years Experience**: Part of established Surabhi Group
+- **100K+ Happy Customers**: Proven track record
+- **₹50Cr+ Assets Managed**: Strong financial backing
+- **Social Responsibility**: 30% profit for welfare
+- **Multilingual Support**: English and Tamil
+- **Local Focus**: Deep roots in Tamil Nadu
+
+## Content Structure
+- **Hero Section**: Main value proposition and call-to-action
+- **About Section**: Company information and statistics
+- **Surabhi Group**: Parent company showcase
+- **Social Welfare**: Impact and initiatives
+- **Plans Section**: Detailed chit fund plans
+- **How It Works**: Step-by-step process
+- **Testimonials**: Customer reviews
+- **FAQ**: Common questions and answers
+- **Contact**: Business hours and contact information
+
+## Technical Information
+- **Framework**: Pure HTML, CSS, JavaScript (no external dependencies)
+- **Responsive Design**: Mobile-first approach
+- **Multilingual**: English/Tamil language toggle
+- **Performance**: Optimized for fast loading
+- **Accessibility**: Screen reader friendly
+
+## Business Model
+Jaysel Chit Funds operates as a regulated chit fund company, providing secure savings and investment options to customers while maintaining social responsibility through welfare initiatives. The company offers flexible plans with quick access to funds and tax benefits, making it an attractive option for individuals seeking secure financial growth.
+
+## Compliance & Trust
+- Registered under Chit Funds Act, 1982
+- Government-regulated operations
+- Transparent business practices
+- Strong parent company backing (Surabhi Group)
+- Proven track record with 100K+ customers
+- Regular social welfare reporting
+
+This website serves as the primary digital presence for Jaysel Chit Funds, providing information about services, social impact, and easy contact methods for potential customers in Tamil Nadu and beyond.
