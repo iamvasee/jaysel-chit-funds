@@ -15,6 +15,13 @@
  * before JavaScript execution begins.
  */
 
+// ========================================
+// GLOBAL VARIABLES
+// ========================================
+
+// Current language - will be set by overlay or localStorage
+let currentLang = 'en';
+
 document.addEventListener('DOMContentLoaded', function() {
     // ========================================
     // NAVIGATION AND HEADER FUNCTIONALITY
@@ -513,10 +520,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!languageToggle || !langDisplay) return;
     
     // Get current language from localStorage or default to English
-    let currentLang = localStorage.getItem('language') || 'en';
+    // Note: currentLang is now set by the overlay system above
     
     // Initialize language display
-    function updateLanguageDisplay() {
+    window.updateLanguageDisplay = function updateLanguageDisplay() {
         // Show the language that is NOT currently selected
         if (currentLang === 'en') {
             langDisplay.textContent = 'தமிழ்';
@@ -568,6 +575,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             currentLang = currentLang === 'en' ? 'ta' : 'en';
             localStorage.setItem('language', currentLang);
+            localStorage.setItem('languageSelected', 'true'); // Mark as user has selected language
             updateLanguageDisplay();
             translateContent();
             
@@ -583,7 +591,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Translate all content based on current language
-    function translateContent() {
+    window.translateContent = function translateContent() {
         const lang = translations[currentLang];
         if (!lang) return;
         
@@ -786,7 +794,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Helper function to update text content
-    function updateTextContent(id, text) {
+    window.updateTextContent = function updateTextContent(id, text) {
         const element = document.getElementById(id);
         if (element) {
             // Check if text contains HTML tags
@@ -859,3 +867,158 @@ document.addEventListener('DOMContentLoaded', function() {
  * modern browsers and mobile devices, with graceful degradation
  * for older browsers where necessary.
  */ 
+// ========================================
+// LANGUAGE SELECTION OVERLAY FUNCTIONALITY
+// ========================================
+
+/**
+ * LANGUAGE OVERLAY SYSTEM
+ * 
+ * Shows language selection overlay on first visit or when no language preference exists
+ * 
+ * Elements affected in index.html:
+ * - #language-overlay - Main overlay container
+ * - .language-option - Language selection buttons
+ * 
+ * CSS classes used:
+ * - .language-overlay - Overlay styling
+ * - .hidden - Hide overlay after selection
+ * 
+ * Functions:
+ * - selectLanguage(lang) - Handle language selection
+ * - showLanguageOverlay() - Show overlay if needed
+ * - hideLanguageOverlay() - Hide overlay with animation
+ */
+
+// Make function globally accessible
+window.selectLanguage = function selectLanguage(lang) {
+    console.log('Language selected:', lang); // Debug log
+    
+    // Store language preference
+    localStorage.setItem('language', lang);
+    localStorage.setItem('languageSelected', 'true');
+    
+    // Set current language
+    currentLang = lang;
+    
+    // Hide overlay with animation first
+    hideLanguageOverlay();
+    
+    // Wait a moment then update content
+    setTimeout(() => {
+        // Update language display in header (if functions exist)
+        if (typeof updateLanguageDisplay === 'function') {
+            updateLanguageDisplay();
+        } else {
+            console.log('updateLanguageDisplay function not found');
+        }
+        
+        // Translate content (if function exists)
+        if (typeof translateContent === 'function') {
+            translateContent();
+        } else {
+            console.log('translateContent function not found');
+        }
+        
+        // Update document language
+        document.documentElement.lang = lang;
+        
+        console.log('Language setup complete for:', lang);
+    }, 100);
+    
+    // Add subtle success feedback
+    if (navigator.vibrate) {
+        navigator.vibrate(100);
+    }
+}
+
+window.showLanguageOverlay = function showLanguageOverlay() {
+    console.log('Showing language overlay'); // Debug log
+    const overlay = document.getElementById('language-overlay');
+    if (overlay) {
+        overlay.classList.remove('hidden');
+        overlay.style.display = 'flex'; // Ensure it's visible
+        document.body.style.overflow = 'hidden';
+        console.log('Overlay should now be visible');
+    } else {
+        console.log('Overlay element not found');
+    }
+}
+
+window.hideLanguageOverlay = function hideLanguageOverlay() {
+    console.log('Hiding language overlay'); // Debug log
+    const overlay = document.getElementById('language-overlay');
+    if (overlay) {
+        overlay.classList.add('hidden');
+        document.body.style.overflow = '';
+        
+        // Remove overlay from DOM after animation completes
+        setTimeout(() => {
+            if (overlay && overlay.parentNode) {
+                overlay.parentNode.removeChild(overlay);
+                console.log('Overlay removed from DOM');
+            }
+        }, 500);
+    }
+}
+
+function checkLanguagePreference() {
+    const hasLanguagePreference = localStorage.getItem('languageSelected');
+    const savedLanguage = localStorage.getItem('language');
+    
+    console.log('Checking language preference:', { hasLanguagePreference, savedLanguage });
+    
+    if (!hasLanguagePreference) {
+        // First visit - show language overlay
+        console.log('No language preference found, showing overlay');
+        showLanguageOverlay();
+        return null;
+    } else {
+        // Returning visitor - use saved language
+        console.log('Language preference found, using saved language:', savedLanguage);
+        hideLanguageOverlay();
+        return savedLanguage || 'en';
+    }
+}
+
+// Function to reset language preference (for testing)
+window.resetLanguagePreference = function() {
+    localStorage.removeItem('language');
+    localStorage.removeItem('languageSelected');
+    console.log('Language preference reset. Refresh the page to see the overlay.');
+}
+
+// Initialize language system on page load
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing language system'); // Debug log
+    
+    // Add event listeners to language buttons as backup
+    const languageButtons = document.querySelectorAll('.language-option');
+    languageButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            console.log('Button clicked, language:', lang);
+            selectLanguage(lang);
+        });
+    });
+    
+    // Check if user has language preference
+    const preferredLanguage = checkLanguagePreference();
+    
+    if (preferredLanguage) {
+        // User has preference - load in preferred language
+        currentLang = preferredLanguage;
+        
+        // Wait a bit for other functions to be defined
+        setTimeout(() => {
+            if (typeof updateLanguageDisplay === 'function') {
+                updateLanguageDisplay();
+            }
+            if (typeof translateContent === 'function') {
+                translateContent();
+            }
+            document.documentElement.lang = preferredLanguage;
+        }, 100);
+    }
+    // If no preference, overlay will be shown and user will select
+});
