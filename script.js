@@ -22,6 +22,53 @@
 // Current language - will be set by overlay or localStorage
 let currentLang = 'en';
 
+// ========================================
+// DEVICE DETECTION AND TAMIL TEXT OPTIMIZATION
+// ========================================
+
+/**
+ * Detect Android devices and apply Tamil text optimizations
+ */
+function detectAndOptimizeForAndroid() {
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    const isTamil = document.documentElement.lang === 'ta';
+    
+    if (isAndroid && isTamil) {
+        console.log('Android device detected with Tamil language - applying optimizations');
+        
+        // Add Android-specific class for additional CSS targeting
+        document.body.classList.add('android-tamil');
+        
+        // Force reflow to ensure proper text rendering
+        setTimeout(() => {
+            const elements = document.querySelectorAll('h1, h2, h3, p, .btn');
+            elements.forEach(el => {
+                el.style.transform = 'translateZ(0)';
+            });
+        }, 100);
+    }
+}
+
+// Apply optimizations when language changes
+function applyTamilOptimizations() {
+    if (currentLang === 'ta') {
+        document.documentElement.lang = 'ta';
+        detectAndOptimizeForAndroid();
+        
+        // Additional mobile optimizations
+        if (window.innerWidth <= 768) {
+            // Adjust viewport for better Tamil text rendering
+            const viewport = document.querySelector('meta[name="viewport"]');
+            if (viewport) {
+                viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+            }
+        }
+    } else {
+        document.documentElement.lang = 'en';
+        document.body.classList.remove('android-tamil');
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // ========================================
     // NAVIGATION AND HEADER FUNCTIONALITY
@@ -920,8 +967,9 @@ window.selectLanguage = function selectLanguage(lang) {
             console.log('translateContent function not found');
         }
         
-        // Update document language
+        // Update document language and apply optimizations
         document.documentElement.lang = lang;
+        applyTamilOptimizations();
         
         console.log('Language setup complete for:', lang);
     }, 100);

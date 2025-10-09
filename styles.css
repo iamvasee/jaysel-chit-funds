@@ -303,6 +303,445 @@ body {
     background-color: #fff;
 }
 
+/* ========================================
+   TAMIL TEXT OPTIMIZATION
+   ========================================
+   
+   Special handling for Tamil text to prevent layout issues
+   on Android devices and ensure proper text rendering
+*/
+
+/* Tamil language specific styles */
+html[lang="ta"] {
+    /* Better font stack for Tamil */
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', 'Tamil Sangam MN', 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+html[lang="ta"] body {
+    /* Improved line height for Tamil text */
+    line-height: 1.7;
+    /* Better word spacing */
+    word-spacing: 0.1em;
+    /* Default font weight for body text */
+    font-weight: 400;
+}
+
+/* Tamil text containers - prevent overflow */
+html[lang="ta"] h1 {
+    /* Hero title - Bold and prominent */
+    font-weight: 800;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+    line-height: 1.3;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    letter-spacing: 0.01em;
+}
+
+html[lang="ta"] h2 {
+    /* Section headings - Semi-bold */
+    font-weight: 700;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+    line-height: 1.35;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    letter-spacing: 0.015em;
+}
+
+html[lang="ta"] h3 {
+    /* Sub-headings - Medium weight */
+    font-weight: 600;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    letter-spacing: 0.02em;
+}
+
+html[lang="ta"] h4,
+html[lang="ta"] h5,
+html[lang="ta"] h6 {
+    /* Smaller headings - Medium weight */
+    font-weight: 500;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    letter-spacing: 0.02em;
+}
+
+/* Tamil paragraph text */
+html[lang="ta"] p {
+    /* Regular paragraph text - Normal weight */
+    font-weight: 400;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+    line-height: 1.8;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    letter-spacing: 0.01em;
+}
+
+/* Tamil subtitle text */
+html[lang="ta"] .hero-subtitle,
+html[lang="ta"] .header-description {
+    /* Subtitle text - Light weight for better readability */
+    font-weight: 400;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+/* Tamil section subtitles */
+html[lang="ta"] .section-subtitle {
+    /* Section labels - Medium weight, uppercase effect */
+    font-weight: 600;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+    letter-spacing: 0.1em;
+    text-transform: none; /* Remove uppercase for Tamil */
+}
+
+/* Tamil button text */
+html[lang="ta"] .btn,
+html[lang="ta"] button {
+    /* Button text - Semi-bold for prominence */
+    font-weight: 600;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    letter-spacing: 0.02em;
+}
+
+/* Primary CTA buttons - Extra bold */
+html[lang="ta"] .btn-primary,
+html[lang="ta"] .nav-cta {
+    font-weight: 700;
+}
+
+/* Tamil navigation text */
+html[lang="ta"] .nav-links a {
+    /* Navigation text - Medium weight */
+    font-weight: 500;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.01em;
+}
+
+/* Tamil card content */
+html[lang="ta"] .feature-card,
+html[lang="ta"] .stat-card,
+html[lang="ta"] .plan-card {
+    /* Better spacing for Tamil text in cards */
+    padding: 1.5rem;
+}
+
+/* Tamil card headings */
+html[lang="ta"] .feature-card h4,
+html[lang="ta"] .stat-card h3,
+html[lang="ta"] .plan-card h3 {
+    /* Card headings - Semi-bold */
+    font-weight: 600;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.3;
+    letter-spacing: 0.015em;
+}
+
+/* Tamil card descriptions */
+html[lang="ta"] .feature-card p,
+html[lang="ta"] .stat-card p,
+html[lang="ta"] .plan-card p {
+    /* Card descriptions - Light weight */
+    font-weight: 400;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+    line-height: 1.6;
+}
+
+/* Tamil statistics numbers */
+html[lang="ta"] .stat-info h3,
+html[lang="ta"] .achievement-number {
+    /* Numbers and stats - Bold */
+    font-weight: 700;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+}
+
+/* Tamil testimonial text */
+html[lang="ta"] .testimonial-card p {
+    /* Testimonial quotes - Slightly italic feel with serif */
+    font-family: 'Noto Serif Tamil', 'Noto Sans Tamil', 'Latha', serif;
+    font-weight: 400;
+    line-height: 1.7;
+    font-style: normal;
+}
+
+/* Tamil FAQ text */
+html[lang="ta"] .faq-question {
+    /* FAQ questions - Semi-bold */
+    font-weight: 600;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+}
+
+html[lang="ta"] .faq-answer {
+    /* FAQ answers - Regular weight */
+    font-weight: 400;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+    line-height: 1.7;
+}
+
+/* Android-specific fixes */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    /* Android Chrome specific fixes */
+    html[lang="ta"] {
+        /* Force hardware acceleration for smoother rendering */
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        /* Better text rendering */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+    
+    html[lang="ta"] h1,
+    html[lang="ta"] h2,
+    html[lang="ta"] h3 {
+        /* Prevent text from going outside viewport on Android */
+        max-width: 100%;
+        box-sizing: border-box;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+/* Mobile-specific Tamil text fixes */
+@media (max-width: 768px) {
+    html[lang="ta"] h1 {
+        /* Smaller font size for Tamil on mobile to prevent overflow */
+        font-size: clamp(1.5rem, 4vw, 2.2rem) !important;
+        /* Better line height */
+        line-height: 1.3 !important;
+        /* Ensure text stays within bounds */
+        max-width: 100%;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        /* Prevent horizontal overflow */
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    /* Hero section specific fixes for Tamil */
+    html[lang="ta"] .hero-container {
+        /* Ensure proper spacing */
+        padding: 0 1rem;
+        gap: 2rem;
+    }
+    
+    html[lang="ta"] .hero-content {
+        /* Better containment */
+        max-width: 100%;
+        overflow: hidden;
+    }
+    
+    html[lang="ta"] .hero-subtitle {
+        /* Better spacing for Tamil subtitle */
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+        padding: 0 1rem;
+    }
+    
+    html[lang="ta"] .btn {
+        /* Better button sizing for Tamil text */
+        font-size: 0.85rem;
+        padding: 0.9rem 1.4rem;
+        /* Ensure text fits */
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    html[lang="ta"] .nav-cta-text {
+        /* Hide text on very small screens for Tamil */
+        display: none;
+    }
+}
+
+/* Extra small screens - Tamil specific */
+@media (max-width: 480px) {
+    html[lang="ta"] h1 {
+        font-size: 1.4rem !important;
+        line-height: 1.25 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    html[lang="ta"] .hero-content {
+        padding: 0 0.5rem;
+    }
+    
+    html[lang="ta"] .cta-group {
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+        padding: 0 1rem;
+    }
+    
+    html[lang="ta"] .btn {
+        width: 100%;
+        font-size: 0.8rem;
+        padding: 0.8rem 1rem;
+    }
+    
+    /* Trust indicators and rating cards - Tamil fixes */
+    html[lang="ta"] .trust-indicators {
+        /* Better positioning for Tamil text */
+        position: relative;
+        right: 0;
+        top: 0;
+        transform: none;
+        margin: 1rem auto 0;
+        max-width: 90%;
+    }
+    
+    html[lang="ta"] .rating-card {
+        /* Better sizing for Tamil text */
+        padding: 0.8rem 1rem;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    html[lang="ta"] .review-count,
+    html[lang="ta"] .rating-text {
+        /* Prevent text overflow */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 0.75rem;
+    }
+    
+    html[lang="ta"] .trust-seals {
+        /* Better layout for Tamil trust seals */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    html[lang="ta"] .trust-seal {
+        /* Better sizing for Tamil text */
+        font-weight: 500;
+        font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+        font-size: 0.7rem;
+        text-align: center;
+        max-width: 120px;
+    }
+}
+
+/* Tamil emphasis and highlights */
+html[lang="ta"] .highlight,
+html[lang="ta"] strong,
+html[lang="ta"] b {
+    /* Emphasized text - Bold */
+    font-weight: 700;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+}
+
+/* Tamil rating and review text */
+html[lang="ta"] .rating-text {
+    /* Rating text - Bold */
+    font-weight: 700;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+}
+
+html[lang="ta"] .review-count {
+    /* Review count - Regular */
+    font-weight: 400;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+}
+
+/* Tamil badge text */
+html[lang="ta"] .badge span,
+html[lang="ta"] .floating-badges .badge span {
+    /* Badge text - Medium weight */
+    font-weight: 500;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+    font-size: 0.75rem;
+}
+
+/* Tamil footer text */
+html[lang="ta"] footer {
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+    font-weight: 400;
+}
+
+html[lang="ta"] footer h3 {
+    font-weight: 600;
+}
+
+/* Tamil language toggle */
+html[lang="ta"] .lang-text {
+    font-weight: 600;
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+}
+
+/* Android-specific Tamil optimizations */
+.android-tamil h1 {
+    /* Force better text rendering on Android */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Prevent text from breaking layout */
+    max-width: calc(100vw - 2rem);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.android-tamil .hero-content {
+    /* Better containment on Android */
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.android-tamil .cta-group {
+    /* Better button layout on Android */
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+.android-tamil .trust-indicators {
+    /* Hide problematic trust indicators on Android if needed */
+    display: none;
+}
+
+/* Show trust indicators in a better way for Android Tamil */
+.android-tamil .trust-seals {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.android-tamil .trust-seal {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-size: 0.65rem;
+    max-width: 100px;
+    text-align: center;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
