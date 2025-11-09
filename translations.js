@@ -16,8 +16,8 @@ const translations = {
         hero: {
             ratingText: "4.9/5 rating",
             reviewCount: "from 2,500+ reviews",
-            title: "Build Your Dreams with Tamil Nadu's Most Trusted Chit Fund Partner",
-            subtitle: "Join over 50,000 members across Tamil Nadu who trust Jaysel Chit Funds with their financial goals. Experience transparent, regulated, and reliable registered chit fund services in Erode and beyond.",
+            title: "Start your savings journey with us. A chit fund company that stands apart from the rest",
+            subtitle: "We don't measure our growth in rupees—we measure it in the trust our customers place in us and the problems we solve for them every day.",
             getStarted: "Get Started",
             learnMore: "Learn More",
             trustSeals: {
@@ -35,8 +35,8 @@ const translations = {
         // About Section
         about: {
             subtitle: "ABOUT JAYSEL CHIT FUNDS",
-            title: "Chit Fund Plans in Tamil Nadu for Every Need",
-            description: "Choose from our diverse range of registered chit fund plans designed to meet your financial goals and secure investment preferences in Erode and Tamil Nadu.",
+            title: "Built on Trust, Driven by Transparency",
+            description: "Complete transparency in every operation. No hidden charges, no hidden agendas.",
             stats: {
                 members: "50,000+",
                 membersLabel: "Served",
@@ -61,6 +61,18 @@ const translations = {
                 returns: {
                     title: "High Returns",
                     description: "Competitive returns on your investments"
+                },
+                doorstep: {
+                    title: "Doorstep Processing",
+                    description: "Our staff will come to your home for registration and onboarding"
+                },
+                remote: {
+                    title: "Remote Lifecycle",
+                    description: "No need to visit our office during the entire chit lifecycle"
+                },
+                loan: {
+                    title: "Short-term Loans",
+                    description: "Members can take short-term loans for convenience and emergencies"
                 }
             },
             experienceBadge: "Years of Surabhi<br>Group Excellence"
@@ -301,7 +313,7 @@ const translations = {
             ratingText: "4.9/5 மதிப்பீடு",
             reviewCount: "2,500+ Reviews",
             title: "வேறு எந்த சீட்டு நிறுவனத்தோடும் ஒப்பீடு செய்ய இயலாத அளவு தனித்தன்மை மிக்க எங்கள் நிறுவனத்தில் உங்கள் சேமிப்பை துவங்குங்கள்.",
-            subtitle: "தமிழ்நாட்டில் உள்ள 50,000+ உறுப்பினர்களுடன் சேர்ந்து, உங்கள் நிதி இலக்குகளுக்கு ஜெய்செல் சிட் ஃபண்ட்ஸை நம்புங்கள். ஈரோடு மற்றும் அதற்கு அப்பால் நம்பகமான, ஒழுங்குபடுத்தப்பட்ட சிட் ஃபண்ட் சேவைகளை அனுபவிக்கவும்.",
+            subtitle: "நிறுவனத்தின் வளர்ச்சியை ரூபாயில் மதிப்பீடு செய்வதற்கு பதிலாக வாடிக்கையாளரின் மனநிறைவைக் கொண்டே மதிப்பீடு செய்கிறோம்.",
             getStarted: "தொடங்குங்கள்",
             learnMore: "மேலும் அறிய",
             trustSeals: {
@@ -319,8 +331,8 @@ const translations = {
         // About Section
         about: {
             subtitle: "ஜெய்செல் சிட் ஃபண்ட்ஸ் பற்றி",
-            title: "ஒவ்வொரு தேவைக்கும் தமிழ்நாட்டில் சிட் ஃபண்ட் திட்டங்கள்",
-            description: "ஈரோடு மற்றும் தமிழ்நாட்டில் உங்கள் நிதி இலக்குகள் மற்றும் பாதுகாப்பான முதலீட்டு விருப்பங்களை பூர்த்தி செய்ய வடிவமைக்கப்பட்ட பதிவு செய்யப்பட்ட சிட் ஃபண்ட் திட்டங்களின் பல்வேறு வரம்பிலிருந்து தேர்ந்தெடுக்கவும்.",
+            title: "நம்பிக்கையில் கட்டமைக்கப்பட்டு, வெளிப்படைத்தன்மையால் இயக்கப்படுகிறது",
+            description: "மறைமுக கட்டணங்களோ மறைமுக செயல்பாடுகளோ, இமையளவும் இல்லாமல் அத்தனையும் முழு முற்றாக வெளிப்படை தன்மையுடன் கூடிய நிர்வாகம்.",
             stats: {
                 members: "50,000+",
                 membersLabel: "சேவை செய்யப்பட்டவர்கள்",
@@ -345,6 +357,18 @@ const translations = {
                 returns: {
                     title: "அதிக வருமானம்",
                     description: "உங்கள் முதலீடுகளில் போட்டி வருமானம்"
+                },
+                doorstep: {
+                    title: "வீட்டு வாசலில் செயலாக்கம்",
+                    description: "பதிவு மற்றும் உள்நுழைவுக்காக எங்கள் ஊழியர்கள் உங்கள் வீட்டிற்கு வருவார்கள்"
+                },
+                remote: {
+                    title: "தொலைநிலை வாழ்க்கைச் சுழற்சி",
+                    description: "முழு சிட் வாழ்க்கைச் சுழற்சியின் போதும் எங்கள் அலுவலகத்திற்கு வரத் தேவையில்லை"
+                },
+                loan: {
+                    title: "குறுகிய கால கடன்கள்",
+                    description: "உறுப்பினர்கள் வசதி மற்றும் அவசரநிலைகளுக்காக குறுகிய கால கடன்களைப் பெறலாம்"
                 }
             },
             experienceBadge: "சுரபி குழுவின்<br>சிறப்பின் ஆண்டுகள்"

@@ -697,6 +697,12 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextContent('feature-quick-desc', lang.about.features.quick.description);
         updateTextContent('feature-returns-title', lang.about.features.returns.title);
         updateTextContent('feature-returns-desc', lang.about.features.returns.description);
+        updateTextContent('feature-doorstep-title', lang.about.features.doorstep.title);
+        updateTextContent('feature-doorstep-desc', lang.about.features.doorstep.description);
+        updateTextContent('feature-remote-title', lang.about.features.remote.title);
+        updateTextContent('feature-remote-desc', lang.about.features.remote.description);
+        updateTextContent('feature-loan-title', lang.about.features.loan.title);
+        updateTextContent('feature-loan-desc', lang.about.features.loan.description);
         
         // Update experience badge
         updateTextContent('experience-badge-text', lang.about.experienceBadge);
