@@ -657,6 +657,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextContent('nav-home', lang.nav.home);
         updateTextContent('nav-about', lang.nav.about);
         updateTextContent('nav-plans', lang.nav.plans);
+        updateTextContent('nav-csr', lang.nav.csr);
         updateTextContent('nav-faq', lang.nav.faq);
         updateTextContent('nav-contact', lang.nav.contactUs);
         
