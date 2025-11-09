@@ -70,7 +70,6 @@ const translations = {
         philosophy: {
             subtitle: "OUR PHILOSOPHY",
             title: "Growth is for Service. Service is for Growth.",
-            quote: "Growth is for service.<br>Service is for growth.",
             description: "Our guiding principle reflects our commitment to mutual growth through service. We believe that true growth comes from serving others, and through service, we continue to grow.",
             values: {
                 value1: {
@@ -368,7 +367,6 @@ const translations = {
         philosophy: {
             subtitle: "எங்கள் தத்துவம்",
             title: "வளர்ச்சி சேவைக்காக. சேவை வளர்ச்சிக்காக.",
-            quote: "சேவைக்கே வளர்ச்சி,<br>வளர்ச்சிக்கே சேவை.",
             description: "எங்கள் வழிகாட்டும் கொள்கை சேவை மூலம் பரஸ்பர வளர்ச்சிக்கான எங்கள் உறுதிப்பாட்டை பிரதிபலிக்கிறது. உண்மையான வளர்ச்சி மற்றவர்களுக்கு சேவை செய்வதிலிருந்து வருகிறது, மேலும் சேவை மூலம் நாம் தொடர்ந்து வளர்ச்சியடைகிறோம்.",
             values: {
                 value1: {
