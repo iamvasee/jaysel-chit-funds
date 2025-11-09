@@ -66,11 +66,33 @@ const translations = {
             experienceBadge: "Years of Surabhi<br>Group Excellence"
         },
         
+        // Philosophy Section
+        philosophy: {
+            subtitle: "OUR PHILOSOPHY",
+            title: "Growth is for Service. Service is for Growth.",
+            quote: "Growth is for service.<br>Service is for growth.",
+            description: "Our guiding principle reflects our commitment to mutual growth through service. We believe that true growth comes from serving others, and through service, we continue to grow.",
+            values: {
+                value1: {
+                    title: "Serve First",
+                    description: "Every decision begins with people in mind"
+                },
+                value2: {
+                    title: "Grow Together",
+                    description: "Mutual progress through trust and transparency"
+                },
+                value3: {
+                    title: "Impact Community",
+                    description: "Profit with purpose that benefits society"
+                }
+            }
+        },
+        
         // Surabhi Group Section
         surabhi: {
             subtitle: "SURABHI GROUP",
             title: "A Legacy of Trust and Excellence",
-            description: "Jaysel Chit Funds is part of the renowned Surabhi Group, a diversified business conglomerate with over 25 years of experience in Tamil Nadu.",
+            description: "Jaysel Chit Funds is part of the prestigious Surabhi Group, a diversified business conglomerate with over 25+ years of experience in Tamil Nadu.",
             vision: {
                 title: "Our Vision",
                 description: "To be the most trusted and preferred chit fund company in Tamil Nadu, empowering families to achieve their financial dreams."
@@ -340,6 +362,28 @@ const translations = {
                 }
             },
             experienceBadge: "சுரபி குழுவின்<br>சிறப்பின் ஆண்டுகள்"
+        },
+        
+        // Philosophy Section
+        philosophy: {
+            subtitle: "எங்கள் தத்துவம்",
+            title: "வளர்ச்சி சேவைக்காக. சேவை வளர்ச்சிக்காக.",
+            quote: "சேவைக்கே வளர்ச்சி,<br>வளர்ச்சிக்கே சேவை.",
+            description: "எங்கள் வழிகாட்டும் கொள்கை சேவை மூலம் பரஸ்பர வளர்ச்சிக்கான எங்கள் உறுதிப்பாட்டை பிரதிபலிக்கிறது. உண்மையான வளர்ச்சி மற்றவர்களுக்கு சேவை செய்வதிலிருந்து வருகிறது, மேலும் சேவை மூலம் நாம் தொடர்ந்து வளர்ச்சியடைகிறோம்.",
+            values: {
+                value1: {
+                    title: "முதலில் சேவை",
+                    description: "ஒவ்வொரு முடிவும் மக்களை நினைத்தே தொடங்குகிறது"
+                },
+                value2: {
+                    title: "ஒன்றாக வளர்ச்சி",
+                    description: "நம்பிக்கை மற்றும் வெளிப்படைத்தன்மை மூலம் பரஸ்பர முன்னேற்றம்"
+                },
+                value3: {
+                    title: "சமூகத்தில் தாக்கம்",
+                    description: "சமுதாயத்திற்கு பயன் அளிக்கும் நோக்கமுள்ள இலாபம்"
+                }
+            }
         },
         
         // Surabhi Group Section

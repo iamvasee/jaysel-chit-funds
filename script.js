@@ -642,6 +642,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const lang = translations[currentLang];
         if (!lang) return;
         
+        // Update Content-Language meta tag
+        const contentLanguageMeta = document.getElementById('contentLanguageMeta');
+        if (contentLanguageMeta) {
+            contentLanguageMeta.content = currentLang;
+        }
+        
+        // Add data-translate="no" to all translatable elements
+        document.querySelectorAll('[id^="nav-"], [id^="hero-"], [id^="about-"], [id^="philosophy-"], [id^="surabhi-"], [id^="social-"], [id^="plans-"], [id^="how-it-works-"], [id^="testimonials-"], [id^="faq-"], [id^="footer-"]').forEach(el => {
+            el.setAttribute('data-translate', 'no');
+        });
+        
         // Update navigation
         updateTextContent('nav-home', lang.nav.home);
         updateTextContent('nav-about', lang.nav.about);
@@ -698,7 +709,23 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextContent('surabhi-vision-desc', lang.surabhi.vision.description);
         updateTextContent('surabhi-mission-title', lang.surabhi.mission.title);
         updateTextContent('surabhi-mission-desc', lang.surabhi.mission.description);
-        
+
+        // Update Philosophy section
+        if (lang.philosophy) {
+            updateTextContent('philosophy-subtitle', lang.philosophy.subtitle);
+            updateTextContent('philosophy-title', lang.philosophy.title);
+            updateTextContent('philosophy-quote', lang.philosophy.quote || '');
+            updateTextContent('philosophy-description', lang.philosophy.description);
+            if (lang.philosophy.values) {
+                updateTextContent('philosophy-value1-title', lang.philosophy.values.value1.title);
+                updateTextContent('philosophy-value1-desc', lang.philosophy.values.value1.description);
+                updateTextContent('philosophy-value2-title', lang.philosophy.values.value2.title);
+                updateTextContent('philosophy-value2-desc', lang.philosophy.values.value2.description);
+                updateTextContent('philosophy-value3-title', lang.philosophy.values.value3.title);
+                updateTextContent('philosophy-value3-desc', lang.philosophy.values.value3.description);
+            }
+        }
+
         // Update achievements
         updateTextContent('surabhi-years-label', lang.surabhi.achievements.yearsLabel);
         updateTextContent('surabhi-customers-label', lang.surabhi.achievements.customersLabel);
