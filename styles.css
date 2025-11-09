@@ -310,461 +310,192 @@ body {
 }
 
 /* ========================================
-   TAMIL TEXT OPTIMIZATION
+   TAMIL TEXT OPTIMIZATION (REFINED)
    ========================================
    
-   Special handling for Tamil text to prevent layout issues
-   on Android devices and ensure proper text rendering
+   A more refined typographic scale for Tamil to improve readability
+   and visual hierarchy, addressing user feedback about text being
+   too large and lacking a clear structure.
 */
 
 /* Tamil language specific styles */
 html[lang="ta"] {
-    /* Better font stack for Tamil */
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', 'Tamil Sangam MN', 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    /* Use Noto Sans Tamil as the primary font for consistency */
+    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
 }
 
 html[lang="ta"] body {
-    /* Slightly reduced line height for Tamil text */
-    line-height: 1.6;
-    /* Slightly reduced word spacing */
-    word-spacing: 0.05em;
-    /* Slightly reduced letter spacing */
-    letter-spacing: -0.01em;
-    /* Default font weight for body text */
+    /* Slightly smaller base font size for a more balanced look */
+    font-size: 95%; 
+    line-height: 1.7; /* Increased line height for better readability */
     font-weight: 400;
-    /* Slightly smaller base font size */
-    font-size: 97%;
+    word-spacing: 0.05em;
+    letter-spacing: -0.01em;
 }
 
-/* Tamil text containers - prevent overflow */
+/* --- TYPOGRAPHIC HIERARCHY --- */
+
+/* Main Hero Title */
 html[lang="ta"] h1 {
-    /* Hero title - Slightly reduced size and spacing */
-    font-weight: 700; /* Slightly reduced from 800 */
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-    font-size: 2.5rem; /* Explicit size instead of relative */
-    line-height: 1.2; /* Tighter line height */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-    letter-spacing: -0.01em; /* Slightly tighter letter spacing
-    margin: 0.8em 0 0.5em; /* Adjusted margins */
+    font-size: 2.2rem; /* Reduced from 2.5rem */
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    margin: 0.8em 0 0.5em;
 }
 
+/* Section Headings */
 html[lang="ta"] h2 {
-    /* Section headings - Slightly reduced size */
-    font-weight: 650; /* Slightly reduced from 700 */
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-    font-size: 1.8rem; /* Explicit size */
-    line-height: 1.25; /* Tighter line height */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-    letter-spacing: -0.005em; /* Slightly tighter letter spacing */
-    margin: 1.2em 0 0.6em; /* Adjusted margins */
-}
-
-html[lang="ta"] h3 {
-    /* Sub-headings - Reduced size and weight */
+    font-size: 1.9rem; /* Reduced from 2.5rem in some cases */
     font-weight: 600;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-    font-size: 1.4rem; /* Explicit size */
-    line-height: 1.3; /* Tighter line height */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-    letter-spacing: 0; /* Reset letter spacing */
-    margin: 1em 0 0.5em; /* Adjusted margins */
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+    margin: 1em 0 0.6em;
 }
 
+/* Sub-headings */
+html[lang="ta"] h3 {
+    font-size: 1.3rem; /* Reduced from 1.4rem */
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0;
+    margin: 1em 0 0.5em;
+}
+
+/* Smaller headings */
 html[lang="ta"] h4,
 html[lang="ta"] h5,
 html[lang="ta"] h6 {
-    /* Smaller headings - Reduced size and weight */
+    font-size: 1.1rem;
     font-weight: 500;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-    font-size: 1.1rem; /* Explicit size */
-    line-height: 1.3; /* Tighter line height */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-    letter-spacing: 0; /* Reset letter spacing */
-    margin: 0.8em 0 0.4em; /* Adjusted margins */
+    line-height: 1.4;
+    letter-spacing: 0;
+    margin: 0.8em 0 0.4em;
 }
 
-/* Tamil paragraph text */
+/* Paragraph Text */
 html[lang="ta"] p {
-    /* Regular paragraph text - More compact */
-    font-weight: 400;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-    font-size: 0.95em; /* Slightly smaller than base */
-    line-height: 1.6; /* Reduced from 1.8 */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-    letter-spacing: -0.005em; /* Slightly tighter */
-    margin: 0.8em 0; /* Reduced vertical spacing */
+    font-size: 0.98rem; /* Slightly larger for readability */
+    line-height: 1.75; /* Increased for better spacing */
+    margin: 1em 0;
 }
 
-/* Tamil subtitle text */
+/* --- SPECIFIC ELEMENT STYLING --- */
+
+/* Subtitles (e.g., under section headings) */
 html[lang="ta"] .hero-subtitle,
 html[lang="ta"] .header-description {
-    /* Subtitle text - Light weight for better readability */
+    font-size: 1.05rem; /* Slightly larger for emphasis */
     font-weight: 400;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
     line-height: 1.7;
     opacity: 0.9;
 }
 
-/* Tamil section subtitles */
+/* Section Subtitles (e.g., "OUR PHILOSOPHY") */
 html[lang="ta"] .section-subtitle {
-    /* Section labels - Medium weight, uppercase effect */
-    font-weight: 600;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-    letter-spacing: 0.1em;
-    text-transform: none; /* Remove uppercase for Tamil */
+    font-weight: 500; /* Reduced from 600 */
+    letter-spacing: 0.08em;
+    text-transform: none;
 }
 
-/* Tamil button text */
+/* Buttons */
 html[lang="ta"] .btn,
 html[lang="ta"] button {
-    /* Button text - Semi-bold for prominence */
-    font-weight: 600;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-left: 1.2em;
-    padding-right: 1.2em;
+    font-weight: 500; /* Reduced from 600 */
+    letter-spacing: 0.03em;
+}
+
+html[lang="ta"] .btn-primary,
+html[lang="ta"] .nav-cta {
+    font-weight: 600; /* Reduced from 700 */
+}
+
+/* Navigation Links */
+html[lang="ta"] .nav-links a {
+    font-weight: 500;
     letter-spacing: 0.02em;
 }
 
-/* Primary CTA buttons - Extra bold */
-html[lang="ta"] .btn-primary,
-html[lang="ta"] .nav-cta {
-    font-weight: 700;
-}
-
-/* Tamil navigation text */
-html[lang="ta"] .nav-links a {
-    /* Navigation text - Medium weight */
-    font-weight: 500;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    letter-spacing: 0.01em;
-}
-
-/* Tamil card content */
-html[lang="ta"] .feature-card,
-html[lang="ta"] .stat-card,
-html[lang="ta"] .plan-card {
-    /* Better spacing for Tamil text in cards */
-    padding: 1.5rem;
-}
-
-/* Tamil card headings */
+/* Card Headings */
 html[lang="ta"] .feature-card h4,
 html[lang="ta"] .stat-card h3,
-html[lang="ta"] .plan-card h3 {
-    /* Card headings - Semi-bold */
+html[lang="ta"] .plan-card h3,
+html[lang="ta"] .philosophy-card-content h3 {
     font-weight: 600;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.3;
-    letter-spacing: 0.015em;
+    line-height: 1.4;
 }
 
-/* Tamil card descriptions */
+/* Card Descriptions */
 html[lang="ta"] .feature-card p,
 html[lang="ta"] .stat-card p,
-html[lang="ta"] .plan-card p {
-    /* Card descriptions - Light weight */
-    font-weight: 400;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-    line-height: 1.6;
+html[lang="ta"] .plan-card p,
+html[lang="ta"] .philosophy-card-content p {
+    font-size: 0.95rem;
+    line-height: 1.65;
 }
 
-/* Tamil statistics numbers */
-html[lang="ta"] .stat-info h3,
-html[lang="ta"] .achievement-number {
-    /* Numbers and stats - Bold */
-    font-weight: 700;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-}
-
-/* Tamil testimonial text */
+/* Testimonial Text */
 html[lang="ta"] .testimonial-card p {
-    /* Testimonial quotes - Slightly italic feel with serif */
-    font-family: 'Noto Serif Tamil', 'Noto Sans Tamil', 'Latha', serif;
-    font-weight: 400;
-    line-height: 1.7;
+    font-family: 'Noto Serif Tamil', serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
     font-style: normal;
 }
 
-/* Tamil FAQ text */
+/* FAQ Text */
 html[lang="ta"] .faq-question {
-    /* FAQ questions - Semi-bold */
-    font-weight: 600;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+    font-weight: 500; /* Reduced from 600 */
+    font-size: 1.05rem;
 }
 
 html[lang="ta"] .faq-answer {
-    /* FAQ answers - Regular weight */
-    font-weight: 400;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
+    font-size: 1rem;
     line-height: 1.7;
 }
 
-/* Android-specific fixes */
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+@media (max-width: 768px) {
+    html[lang="ta"] h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.35 !important;
+    }
+
+    html[lang="ta"] h2 {
+        font-size: 1.6rem;
+    }
+
+    html[lang="ta"] .hero-subtitle {
+        font-size: 1rem !important;
+    }
+
+    html[lang="ta"] .btn {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html[lang="ta"] h1 {
+        font-size: 1.6rem !important;
+        line-height: 1.3 !important;
+    }
+
+    html[lang="ta"] h2 {
+        font-size: 1.4rem;
+    }
+
+    html[lang="ta"] .btn {
+        font-size: 0.85rem;
+    }
+}
+
+/* Android-specific rendering fix */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-    /* Android Chrome specific fixes */
     html[lang="ta"] {
-        /* Better text rendering */
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
     }
-    
-    html[lang="ta"] h1,
-    html[lang="ta"] h2,
-    html[lang="ta"] h3 {
-        /* Prevent text from going outside viewport on Android */
-        max-width: 100%;
-        box-sizing: border-box;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-    }
-}
-
-/* Mobile-specific Tamil text fixes */
-@media (max-width: 768px) {
-    html[lang="ta"] h1 {
-        /* Smaller font size for Tamil on mobile to prevent overflow */
-        font-size: clamp(1.5rem, 4vw, 2.2rem) !important;
-        /* Better line height */
-        line-height: 1.3 !important;
-        /* Ensure text stays within bounds */
-        max-width: 100%;
-        padding: 0 1rem;
-        box-sizing: border-box;
-        /* Prevent horizontal overflow */
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        -webkit-hyphens: auto;
-    hyphens: auto;
-    }
-    
-    /* Hero section specific fixes for Tamil */
-    html[lang="ta"] .hero-container {
-        /* Ensure proper spacing */
-        padding: 0 1rem;
-        gap: 2rem;
-    }
-    
-    html[lang="ta"] .hero-content {
-        /* Better containment */
-        max-width: 100%;
-        overflow: hidden;
-    }
-    
-    html[lang="ta"] .hero-subtitle {
-        /* Better spacing for Tamil subtitle */
-        font-size: 0.9rem !important;
-        line-height: 1.6 !important;
-        padding: 0 1rem;
-    }
-    
-    html[lang="ta"] .btn {
-        /* Better button sizing for Tamil text */
-        font-size: 0.85rem;
-        padding: 0.9rem 1.4rem;
-        /* Ensure text fits */
-        min-height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-    
-    html[lang="ta"] .nav-cta-text {
-        /* Hide text on very small screens for Tamil */
-        display: none;
-    }
-}
-
-/* Extra small screens - Tamil specific */
-@media (max-width: 480px) {
-    html[lang="ta"] h1 {
-        font-size: 1.4rem !important;
-        line-height: 1.25 !important;
-        margin-bottom: 1rem !important;
-    }
-    
-    html[lang="ta"] .hero-content {
-        padding: 0 0.5rem;
-    }
-    
-    html[lang="ta"] .cta-group {
-        flex-direction: column;
-        gap: 0.8rem;
-        width: 100%;
-        padding: 0 1rem;
-    }
-    
-    html[lang="ta"] .btn {
-        width: 100%;
-        font-size: 0.8rem;
-        padding: 0.8rem 1rem;
-    }
-    
-    /* Trust indicators and rating cards - Tamil fixes */
-    html[lang="ta"] .trust-indicators {
-        /* Better positioning for Tamil text */
-        position: relative;
-        right: 0;
-        top: 0;
-        transform: none;
-        margin: 1rem auto 0;
-        max-width: 90%;
-    }
-    
-    html[lang="ta"] .rating-card {
-        /* Better sizing for Tamil text */
-        padding: 0.8rem 1rem;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-    
-    html[lang="ta"] .review-count,
-    html[lang="ta"] .rating-text {
-        /* Prevent text overflow */
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        font-size: 0.75rem;
-    }
-    
-    html[lang="ta"] .trust-seals {
-        /* Better layout for Tamil trust seals */
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 2rem;
-    }
-    
-    html[lang="ta"] .trust-seal {
-        /* Better sizing for Tamil text */
-        font-weight: 500;
-        font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-        font-size: 0.7rem;
-        text-align: center;
-        max-width: 120px;
-    }
-}
-
-/* Tamil emphasis and highlights */
-html[lang="ta"] .highlight,
-html[lang="ta"] strong,
-html[lang="ta"] b {
-    /* Emphasized text - Bold */
-    font-weight: 700;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-}
-
-/* Tamil rating and review text */
-html[lang="ta"] .rating-text {
-    /* Rating text - Bold */
-    font-weight: 700;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-}
-
-html[lang="ta"] .review-count {
-    /* Review count - Regular */
-    font-weight: 400;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-}
-
-/* Tamil badge text */
-html[lang="ta"] .badge span,
-html[lang="ta"] .floating-badges .badge span {
-    /* Badge text - Medium weight */
-    font-weight: 500;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-    font-size: 0.75rem;
-}
-
-/* Tamil footer text */
-html[lang="ta"] footer {
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-    font-weight: 400;
-}
-
-html[lang="ta"] footer h3 {
-    font-weight: 600;
-}
-
-/* Tamil language toggle */
-html[lang="ta"] .lang-text {
-    font-weight: 600;
-    font-family: 'Noto Sans Tamil', 'Latha', 'Vijaya', sans-serif;
-}
-
-/* Android-specific Tamil optimizations */
-.android-tamil h1 {
-    /* Force better text rendering on Android and iOS */
-    -webkit-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    /* Prevent text from breaking layout */
-    max-width: calc(100vw - 2rem);
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.android-tamil .hero-content {
-    /* Better containment on Android */
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-}
-
-.android-tamil .cta-group {
-    /* Better button layout on Android */
-    width: 100%;
-    max-width: 100%;
-    padding: 0 1rem;
-    box-sizing: border-box;
-}
-
-.android-tamil .trust-indicators {
-    /* Hide problematic trust indicators on Android if needed */
-    display: none;
-}
-
-/* Show trust indicators in a better way for Android Tamil */
-.android-tamil .trust-seals {
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.android-tamil .trust-seal {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 0.5rem;
-    border-radius: 8px;
-    font-size: 0.65rem;
-    max-width: 100px;
-    text-align: center;
 }
 
 .container {
@@ -2031,123 +1762,115 @@ nav {
     }
 }
 
-/* Surabhi Group Section */
+
 .philosophy-section {
     padding: 6rem 0;
-    background: linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
+    background: #f9fafb;
+    position: relative;
+    overflow: hidden;
+}
+
+.philosophy-section::before {
+    content: '';
+    position: absolute;
+    top: -10rem;
+    right: -10rem;
+    width: 30rem;
+    height: 30rem;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.05), transparent 70%);
+    pointer-events: none;
 }
 
 .philosophy-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 5rem;
     align-items: center;
 }
 
 .philosophy-text {
-    max-width: 600px;
+    max-width: 500px;
 }
 
-.philosophy-quote {
-    font-size: 2rem;
-    line-height: 1.3;
-    color: var(--primary-blue);
+.philosophy-text .section-subtitle {
+    color: var(--primary-color);
+}
+
+.philosophy-text h2 {
+    font-size: 2.5rem;
     font-weight: 700;
-    margin: 1.5rem 0;
-    font-family: 'Noto Serif Tamil', serif;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
 }
 
 .philosophy-description {
-    font-size: 1.1rem;
+    font-size: 1.125rem;
+    color: var(--text-gray);
     line-height: 1.7;
-    color: var(--text-secondary);
-    margin-top: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-/* Philosophy values grid */
+.philosophy-quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--primary-blue);
+    font-weight: 500;
+    padding-left: 2rem;
+    border-left: 3px solid var(--primary-color);
+    font-family: 'Noto Serif Tamil', serif;
+}
+
 .philosophy-values {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .philosophy-card {
-    background: #ffffff;
-    border: 1px solid rgba(99, 102, 241, 0.15);
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .philosophy-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-    border-color: rgba(99, 102, 241, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
 }
 
 .philosophy-icon {
-    width: 56px;
-    height: 56px;
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
     display: grid;
     place-items: center;
-    border-radius: 12px;
-    background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(99,102,241,0.04));
+    border-radius: 50%;
+    background: var(--light-blue);
     color: var(--primary-blue);
-    margin-bottom: 0.75rem;
 }
 
-.philosophy-card h3 {
-    font-size: 1.125rem;
-    font-weight: 700;
-    margin: 0.25rem 0 0.5rem 0;
-    color: var(--text-primary);
+.philosophy-card-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 0.5rem;
 }
 
-.philosophy-card p {
-    font-size: 0.975rem;
+.philosophy-card-content p {
+    font-size: 1rem;
+    color: var(--text-gray);
     line-height: 1.6;
-    color: var(--text-secondary);
     margin: 0;
 }
 
-.philosophy-image {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-.philosophy-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.philosophy-image:hover img {
-    transform: scale(1.03);
-}
-
-/* Responsive styles */
 @media (max-width: 992px) {
     .philosophy-content {
         grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2rem;
-    }
-    
-    .philosophy-text {
-        max-width: 100%;
-        margin: 0 auto;
-    }
-    
-    .philosophy-quote {
-        font-size: 1.8rem;
-    }
-
-    .philosophy-values {
-        grid-template-columns: 1fr;
-        text-align: left;
+        gap: 4rem;
     }
 }
 
@@ -2155,9 +1878,13 @@ nav {
     .philosophy-section {
         padding: 4rem 0;
     }
-    
+
+    .philosophy-text h2 {
+        font-size: 2rem;
+    }
+
     .philosophy-quote {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 }
 
@@ -2167,6 +1894,7 @@ html[lang="ta"] .philosophy-quote {
     letter-spacing: -0.01em;
     line-height: 1.35;
 }
+
 
 .surabhi-section {
     padding: 6rem 0;
