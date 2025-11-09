@@ -58,10 +58,6 @@ const translations = {
                     title: "Quick Processing",
                     description: "Fast and efficient service delivery"
                 },
-                returns: {
-                    title: "High Returns",
-                    description: "Competitive returns on your investments"
-                },
                 doorstep: {
                     title: "Doorstep Processing",
                     description: "Our staff will come to your home for registration and onboarding"
@@ -344,7 +340,7 @@ const translations = {
             features: {
                 regulated: {
                     title: "அரசு பதிவு செய்யப்பட்ட சிட் ஃபண்ட்",
-                    description: "சிட் ஃபண்ட்ஸ் சட்டம், 1982 உடன் முழுமையாக இணங்கியது"
+                    description: "மத்திய அரசின் அங்கீகாரத்துடனும், மாநில அரசின் தணிக்கைக்கு உட்பட்டும்"
                 },
                 secure: {
                     title: "பாதுகாப்பான முதலீடு",
@@ -353,10 +349,6 @@ const translations = {
                 quick: {
                     title: "விரைவான செயலாக்கம்",
                     description: "விரைவான மற்றும் திறமையான சேவை வழங்கல்"
-                },
-                returns: {
-                    title: "அதிக வருமானம்",
-                    description: "உங்கள் முதலீடுகளில் போட்டி வருமானம்"
                 },
                 doorstep: {
                     title: "வீட்டு வாசலில் செயலாக்கம்",

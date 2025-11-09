@@ -695,8 +695,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextContent('feature-secure-desc', lang.about.features.secure.description);
         updateTextContent('feature-quick-title', lang.about.features.quick.title);
         updateTextContent('feature-quick-desc', lang.about.features.quick.description);
-        updateTextContent('feature-returns-title', lang.about.features.returns.title);
-        updateTextContent('feature-returns-desc', lang.about.features.returns.description);
+
         updateTextContent('feature-doorstep-title', lang.about.features.doorstep.title);
         updateTextContent('feature-doorstep-desc', lang.about.features.doorstep.description);
         updateTextContent('feature-remote-title', lang.about.features.remote.title);
