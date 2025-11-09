@@ -278,19 +278,6 @@ const translations = {
             }
         },
         
-        // Footer
-        footer: {
-            description: "Part of the prestigious Surabhi Group, providing secure savings and chit fund plans in Tamil Nadu for over five decades.",
-            businessHours: "Business Hours",
-            hoursWeekdays: "Monday - Friday: 10am - 6pm",
-            hoursSaturday: "Saturday: 10am - 2pm",
-            contactUs: "Contact Us",
-            startConversation: "Start a Conversation",
-            privacyPolicy: "Privacy Policy",
-            termsOfService: "Terms of Service",
-            copyright: "© 2025 Jaysel Chit Funds Private Limited."
-        },
-        
         // Feedback Section
         feedback: {
             title: "Share Your Experience",
@@ -313,7 +300,7 @@ const translations = {
         hero: {
             ratingText: "4.9/5 மதிப்பீடு",
             reviewCount: "2,500+ Reviews",
-            title: "தமிழ்நாட்டின் மிகவும் நம்பகமான சிட் ஃபண்ட் கூட்டாளியுடன் உங்கள் கனவுகளை உருவாக்குங்கள்",
+            title: "வேறு எந்த சீட்டு நிறுவனத்தோடும் ஒப்பீடு செய்ய இயலாத அளவு தனித்தன்மை மிக்க எங்கள் நிறுவனத்தில் உங்கள் சேமிப்பை துவங்குங்கள்.",
             subtitle: "தமிழ்நாட்டில் உள்ள 50,000+ உறுப்பினர்களுடன் சேர்ந்து, உங்கள் நிதி இலக்குகளுக்கு ஜெய்செல் சிட் ஃபண்ட்ஸை நம்புங்கள். ஈரோடு மற்றும் அதற்கு அப்பால் நம்பகமான, ஒழுங்குபடுத்தப்பட்ட சிட் ஃபண்ட் சேவைகளை அனுபவிக்கவும்.",
             getStarted: "தொடங்குங்கள்",
             learnMore: "மேலும் அறிய",
@@ -558,18 +545,7 @@ const translations = {
             }
         },
         
-        // Footer
-        footer: {
-            description: "பிரபலமான சுரபி குழுவின் ஒரு பகுதியாக, ஐந்து தசாப்தங்களுக்கும் மேலாக தமிழ்நாட்டில் பாதுகாப்பான சேமிப்பு மற்றும் சிட் ஃபண்ட் திட்டங்களை வழங்குகிறது.",
-            businessHours: "வணிக நேரங்கள்",
-            hoursWeekdays: "திங்கள் - வெள்ளி: காலை 10 மணி - மாலை 6 மணி",
-            hoursSaturday: "சனிக்கிழமை: காலை 10 மணி - மாலை 2 மணி",
-            contactUs: "தொடர்பு கொள்ளுங்கள்",
-            startConversation: "ஒரு உரையாடலைத் தொடங்குங்கள்",
-            privacyPolicy: "தனியுரிமைக் கொள்கை",
-            termsOfService: "சேவை விதிமுறைகள்",
-            copyright: "© 2025 ஜெய்செல் சிட் ஃபண்ட்ஸ் பிரைவேட் லிமிடெட்."
-        },
+
         
         // Feedback Section
         feedback: {

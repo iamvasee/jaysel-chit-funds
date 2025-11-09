@@ -842,17 +842,6 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextContent('faq-q10', lang.faq.questions.q10);
         updateTextContent('faq-a10', lang.faq.questions.a10);
         
-        // Update footer
-        updateTextContent('footer-description', lang.footer.description);
-        updateTextContent('footer-business-hours', lang.footer.businessHours);
-        updateTextContent('footer-hours-weekdays', lang.footer.hoursWeekdays);
-        updateTextContent('footer-hours-saturday', lang.footer.hoursSaturday);
-        updateTextContent('footer-contact-us', lang.footer.contactUs);
-        updateTextContent('footer-cta-text', lang.footer.startConversation);
-        updateTextContent('footer-privacy', lang.footer.privacyPolicy);
-        updateTextContent('footer-terms', lang.footer.termsOfService);
-        updateTextContent('footer-copyright', lang.footer.copyright);
-        
         // Update feedback section
         updateTextContent('feedback-title', lang.feedback.title);
         updateTextContent('feedback-description', lang.feedback.description);
