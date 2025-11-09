@@ -526,9 +526,6 @@ html[lang="ta"] .faq-answer {
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
     /* Android Chrome specific fixes */
     html[lang="ta"] {
-        /* Force hardware acceleration for smoother rendering */
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
         /* Better text rendering */
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
