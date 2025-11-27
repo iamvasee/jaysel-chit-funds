@@ -12,7 +12,7 @@ const translations = {
             csr: "CSR",
             contactUs: "Contact Us"
         },
-        
+
         // Hero Section
         hero: {
             ratingText: "4.9/5 rating",
@@ -32,7 +32,7 @@ const translations = {
                 tax: "Tax Benefits"
             }
         },
-        
+
         // About Section
         about: {
             subtitle: "ABOUT JAYSEL CHIT FUNDS",
@@ -74,7 +74,7 @@ const translations = {
             },
             experienceBadge: "Years of Surabhi<br>Group Excellence"
         },
-        
+
         // Philosophy Section
         philosophy: {
             subtitle: "OUR PHILOSOPHY",
@@ -95,7 +95,7 @@ const translations = {
                 }
             }
         },
-        
+
         // Surabhi Group Section
         surabhi: {
             subtitle: "SURABHI GROUP",
@@ -126,7 +126,7 @@ const translations = {
                 assetsLabel: "Assets Managed"
             }
         },
-        
+
         // Social Welfare Section
         socialWelfare: {
             subtitle: "SOCIAL WELFARE",
@@ -170,7 +170,7 @@ const translations = {
                 }
             }
         },
-        
+
         // Plans Section
         plans: {
             subtitle: "FLEXIBLE CHIT FUND PLANS",
@@ -208,7 +208,7 @@ const translations = {
             },
             note: "All our chit funds are registered and regulated under the Chit Funds Act, 1982. Terms and conditions apply. Returns may vary based on auction outcomes."
         },
-        
+
         // How It Works Section
         howItWorks: {
             subtitle: "HOW IT WORKS",
@@ -233,7 +233,7 @@ const translations = {
                 }
             }
         },
-        
+
         // Testimonials Section
         testimonials: {
             subtitle: "TESTIMONIALS",
@@ -257,7 +257,7 @@ const translations = {
                 }
             ]
         },
-        
+
         // FAQ Section
         faq: {
             subtitle: "FAQ",
@@ -286,7 +286,100 @@ const translations = {
                 a10: "We offer multiple payment options including online transfer, auto-debit, cheque, and cash at our office. We also provide payment reminders and receipts for all transactions."
             }
         },
-        
+
+        // Team Section
+        team: {
+            subtitle: "OUR TEAM",
+            title: "Meet the People Behind Our Success",
+            description: "Our dedicated team brings decades of experience in financial services and chit fund management.",
+            leadership: {
+                title: "Leadership Team",
+                members: {
+                    member1: {
+                        name: "Selvaraj S.",
+                        role: "Group Chairman & Director",
+                        bio: "Leading the Surabhi Group with decades of experience in financial services and business excellence."
+                    },
+                    member2: {
+                        name: "Sadhasivam R.",
+                        role: "Group CFO & Director",
+                        bio: "Ensuring fiscal responsibility and strategic financial planning across the organization."
+                    },
+                    member3: {
+                        name: "Vasanthakumar K.",
+                        role: "Director",
+                        bio: "Guiding strategic initiatives and business development for sustained growth."
+                    },
+                    member4: {
+                        name: "Akilan P.",
+                        role: "General Manager",
+                        bio: "Managing day-to-day operations and ensuring excellence in service delivery."
+                    }
+                }
+            },
+            areaManagers: {
+                title: "Area Managers",
+                members: {
+                    manager1: {
+                        name: "Suresh Patel",
+                        role: "Area Manager, Chennai North"
+                    },
+                    manager2: {
+                        name: "Meena Rajan",
+                        role: "Area Manager, Chennai South"
+                    },
+                    manager3: {
+                        name: "Vijay Kumar",
+                        role: "Area Manager, Tiruvallur"
+                    },
+                    manager4: {
+                        name: "Anitha Devi",
+                        role: "Area Manager, Kanchipuram"
+                    },
+                    manager5: {
+                        name: "Ramesh Babu",
+                        role: "Area Manager, Chengalpattu"
+                    },
+                    manager6: {
+                        name: "Divya Krishnan",
+                        role: "Area Manager, Vellore"
+                    }
+                }
+            },
+            devExecutives: {
+                title: "Development Executives",
+                members: {
+                    exec1: {
+                        name: "Karthik Singh",
+                        role: "Development Executive"
+                    },
+                    exec2: {
+                        name: "Pooja Menon",
+                        role: "Development Executive"
+                    },
+                    exec3: {
+                        name: "Ganesh Reddy",
+                        role: "Development Executive"
+                    },
+                    exec4: {
+                        name: "Sangeetha Iyer",
+                        role: "Development Executive"
+                    },
+                    exec5: {
+                        name: "Naveen Kumar",
+                        role: "Development Executive"
+                    },
+                    exec6: {
+                        name: "Rekha Balan",
+                        role: "Development Executive"
+                    }
+                }
+            },
+            gallery: {
+                title: "Team Gallery"
+            }
+        },
+
         // Feedback Section
         feedback: {
             title: "Share Your Experience",
@@ -294,7 +387,7 @@ const translations = {
             buttonText: "Write a Review"
         }
     },
-    
+
     ta: {
         // Navigation
         nav: {
@@ -305,7 +398,7 @@ const translations = {
             csr: "சமூக பொறுப்பு",
             contactUs: "தொடர்பு"
         },
-        
+
         // Hero Section
         hero: {
             ratingText: "4.9/5 மதிப்பீடு",
@@ -325,7 +418,7 @@ const translations = {
                 tax: "வரி நன்மைகள்"
             }
         },
-        
+
         // About Section
         about: {
             subtitle: "ஜெய்செல் சிட் ஃபண்ட்ஸ் பற்றி",
@@ -367,7 +460,7 @@ const translations = {
             },
             experienceBadge: "சுரபி குழுவின்<br>சிறப்பின் ஆண்டுகள்"
         },
-        
+
         // Philosophy Section
         philosophy: {
             subtitle: "எங்கள் தத்துவம்",
@@ -388,7 +481,7 @@ const translations = {
                 }
             }
         },
-        
+
         // Surabhi Group Section
         surabhi: {
             subtitle: "சுரபி குழு",
@@ -419,7 +512,7 @@ const translations = {
                 assetsLabel: "நிர்வகிக்கப்பட்ட சொத்துக்கள்"
             }
         },
-        
+
         // Social Welfare Section
         socialWelfare: {
             subtitle: "சமூக நலன்",
@@ -463,7 +556,7 @@ const translations = {
                 }
             }
         },
-        
+
         // Plans Section
         plans: {
             subtitle: "நெகிழ்வான சிட் ஃபண்ட் திட்டங்கள்",
@@ -501,7 +594,7 @@ const translations = {
             },
             note: "எங்கள் அனைத்து சிட் ஃபண்ட்களும் Chit Funds Act, 1982 கீழ் பதிவு செய்யப்பட்டு ஒழுங்குபடுத்தப்படுகின்றன. விதிமுறைகள் மற்றும் நிபந்தனைகள் பொருந்தும். ஏல முடிவுகளின் அடிப்படையில் வருமானம் மாறுபடலாம்."
         },
-        
+
         // How It Works Section
         howItWorks: {
             subtitle: "எப்படி வேலை செய்கிறது",
@@ -526,14 +619,14 @@ const translations = {
                 }
             }
         },
-        
+
         // Testimonials Section
         testimonials: {
             subtitle: "மதிப்புரைகள்",
             title: "எங்கள் உறுப்பினர்கள் என்ன சொல்கிறார்கள்",
             description: "தங்கள் நிதி இலக்குகளுக்கு எங்களை நம்பும் ஆயிரக்கணக்கான திருப்தியான உறுப்பினர்களுடன் சேரவும்"
         },
-        
+
         // FAQ Section
         faq: {
             subtitle: "கேள்விகள்",
@@ -559,12 +652,103 @@ const translations = {
                 q9: "உங்கள் அலுவலக நேரங்கள் என்ன?",
                 a9: "நாங்கள் திங்கள் முதல் வெள்ளி வரை காலை 10 மணி முதல் மாலை 6 மணி வரையும், சனிக்கிழமை காலை 10 மணி முதல் மாலை 2 மணி வரையும் செயல்படுகிறோம். இந்த நேரங்களில் உங்களுக்கு உதவ எங்கள் வாடிக்கையாளர் ஆதரவு கிடைக்கிறது.",
                 q10: "மாதாந்திர பங்களிப்புகளை எப்படி செலுத்துவது?",
-                a10: "ஆன்லைன் பரிமாற்றம், தானியங்கி பற்று, செக், மற்றும் எங்கள் அலுவலகத்தில் பணம் உள்ளிட்ட பல கட்டண விருப்பங்களை வழங்குகிறோம். அனைத்து பரிவர்த்தனைகளுக்கும் கட்டண நினைவூட்டல்கள் மற்றும் ரசீதுகளையும் வழங்குகிறோம்."
+                a10: "நாங்கள் ஆன்லைன் பரிமாற்றம், தானியங்கி பற்றுதல், காசோலை மற்றும் எங்கள் அலுவலகத்தில் பண பணம் உட்பட பல கட்டண விருப்பங்களை வழங்குகிறோம். அனைத்து பரிவர்த்தனைகளுக்கும் கட்டண நினைவூட்டல்கள் மற்றும் ரசீதுகளையும் வழங்குகிறோம்."
             }
         },
-        
 
-        
+        // Team Section
+        team: {
+            subtitle: "எங்கள் குழு",
+            title: "எங்கள் வெற்றிக்குப் பின்னால் உள்ளவர்களை சந்திக்கவும்",
+            description: "எங்கள் அர்ப்பணிப்புள்ள குழு நிதி சேவைகள் மற்றும் சிட் ஃபண்ட் மேலாண்மையில் பல தசாப்தங்களின் அனுபவத்தைக் கொண்டுவருகிறது.",
+            leadership: {
+                title: "தலைமைக் குழு",
+                members: {
+                    member1: {
+                        name: "செல்வராஜ் S.",
+                        role: "குழு தலைவர் மற்றும் இயக்குநர்",
+                        bio: "நிதி சேவைகள் மற்றும் வணிக சிறப்பில் பல தசாப்தங்களின் அனுபவத்துடன் சுரபி குழுவை வழிநடத்துகிறார்."
+                    },
+                    member2: {
+                        name: "சதாசிவம் R.",
+                        role: "குழு CFO மற்றும் இயக்குநர்",
+                        bio: "நிறுவனம் முழுவதும் நிதி பொறுப்பு மற்றும் மூலோபாய நிதி திட்டமிடலை உறுதி செய்கிறார்."
+                    },
+                    member3: {
+                        name: "வசந்தகுமார் K.",
+                        role: "இயக்குநர்",
+                        bio: "நிலையான வளர்ச்சிக்கான மூலோபாய முயற்சிகள் மற்றும் வணிக மேம்பாட்டை வழிநடத்துகிறார்."
+                    },
+                    member4: {
+                        name: "அகிலன் P.",
+                        role: "பொது மேலாளர்",
+                        bio: "அன்றாட செயல்பாடுகளை நிர்வகித்து சேவை வழங்கலில் சிறப்பை உறுதி செய்கிறார்."
+                    }
+                }
+            },
+            areaManagers: {
+                title: "பகுதி மேலாளர்கள்",
+                members: {
+                    manager1: {
+                        name: "சுரேஷ் படேல்",
+                        role: "பகுதி மேலாளர், வடசென்னை"
+                    },
+                    manager2: {
+                        name: "மீனா ராஜன்",
+                        role: "பகுதி மேலாளர், தென்சென்னை"
+                    },
+                    manager3: {
+                        name: "விஜய் குமார்",
+                        role: "பகுதி மேலாளர், திருவள்ளூர்"
+                    },
+                    manager4: {
+                        name: "அனிதா தேவி",
+                        role: "பகுதி மேலாளர், காஞ்சிபுரம்"
+                    },
+                    manager5: {
+                        name: "ரமேஷ் பாபு",
+                        role: "பகுதி மேலாளர், செங்கல்பட்டு"
+                    },
+                    manager6: {
+                        name: "திவ்யா கிருஷ்ணன்",
+                        role: "பகுதி மேலாளர், வேலூர்"
+                    }
+                }
+            },
+            devExecutives: {
+                title: "வளர்ச்சி நிர்வாகிகள்",
+                members: {
+                    exec1: {
+                        name: "கார்த்திக் சிங்",
+                        role: "வளர்ச்சி நிர்வாகி"
+                    },
+                    exec2: {
+                        name: "பூஜா மேனன்",
+                        role: "வளர்ச்சி நிர்வாகி"
+                    },
+                    exec3: {
+                        name: "கணேஷ் ரெட்டி",
+                        role: "வளர்ச்சி நிர்வாகி"
+                    },
+                    exec4: {
+                        name: "சங்கீதா ஐயர்",
+                        role: "வளர்ச்சி நிர்வாகி"
+                    },
+                    exec5: {
+                        name: "நவீன் குமார்",
+                        role: "வளர்ச்சி நிர்வாகி"
+                    },
+                    exec6: {
+                        name: "ரேகா பாலன்",
+                        role: "வளர்ச்சி நிர்வாகி"
+                    }
+                }
+            },
+            gallery: {
+                title: "குழு படங்கள்"
+            }
+        },
+
         // Feedback Section
         feedback: {
             title: "உங்கள் அனுபவத்தை பகிர்ந்து கொள்ளுங்கள்",
