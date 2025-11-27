@@ -99,8 +99,8 @@ const translations = {
         // Surabhi Group Section
         surabhi: {
             subtitle: "SURABHI GROUP",
-            title: "A Legacy of Trust and Excellence",
-            description: "Jaysel Chit Funds is part of the prestigious Surabhi Group, a diversified business conglomerate with over 25+ years of experience in Tamil Nadu.",
+            title: "Driven by dedication. Guided by integrity.",
+            description: "Jaysel Chit Funds is proudly managed by the Surabhi Group—a trusted name with over 50 years of experience in financial services and more than 50,000 satisfied customers across Tamil Nadu.",
             vision: {
                 title: "Our Vision",
                 description: "To be the most trusted and preferred chit fund company in Tamil Nadu, empowering families to achieve their financial dreams."
@@ -392,8 +392,8 @@ const translations = {
         // Surabhi Group Section
         surabhi: {
             subtitle: "சுரபி குழு",
-            title: "நம்பகம் மற்றும் சிறப்பின் மரபு",
-            description: "ஜெய்செல் சிட் ஃபண்ட்ஸ் பிரபலமான சுரபி குழுவின் ஒரு பகுதியாகும், இது தமிழ்நாட்டில் 25+ ஆண்டுகள் அனுபவம் கொண்ட பல்வேறு வணிக கூட்டமைப்பு.",
+            title: "வியர்வை எமது களம், நேர்மை எமது பலம்",
+            description: "ஜெய்செல் சிட் ஃபண்ட்ஸ், நிதி நிறுவன சேவையில், 50 ஆண்டுகால அனுபவத்தையும் 50 ஆயிரத்திற்கும் மேல் நிறைவு பெற்ற வாடிக்கையாளர்களையும் கொண்ட சுரபி நிறுவனத்தின் நிர்வாக குழுவால் பராமரிக்கப்படுகிறோம் என்பதை பெருமையோடு குறிப்பிடுகிறோம்.",
             vision: {
                 title: "எங்கள் பார்வை",
                 description: "தமிழ்நாட்டில் மிகவும் நம்பகமான மற்றும் விரும்பத்தக்க சிட் ஃபண்ட் நிறுவனமாக இருக்க, குடும்பங்கள் தங்கள் நிதி கனவுகளை அடைய உதவுவது."
