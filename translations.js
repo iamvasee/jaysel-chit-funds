@@ -8,6 +8,7 @@ const translations = {
             home: "Home",
             about: "About",
             plans: "Plans",
+            team: "Team",
             faq: "FAQ",
             csr: "CSR",
             contactUs: "Contact Us"
@@ -394,6 +395,7 @@ const translations = {
             home: "முகப்பு",
             about: "எங்களைப் பற்றி",
             plans: "திட்டங்கள்",
+            team: "குழு",
             faq: "கேள்விகள்",
             csr: "சமூக பொறுப்பு",
             contactUs: "தொடர்பு"
