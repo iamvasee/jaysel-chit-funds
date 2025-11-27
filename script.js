@@ -19,8 +19,45 @@
 // GLOBAL VARIABLES
 // ========================================
 
+// ========================================
+// LAUNCH TOGGLE - Change this to show/hide the "Coming Soon" page
+// ========================================
+// Set to TRUE to show "Coming Soon" page (launching December 6th, 2025 at 5pm)
+// Set to FALSE to show the full website
+const SHOW_COMING_SOON = false;
+
 // Current language - will be set by overlay or localStorage
 let currentLang = 'en';
+
+// ========================================
+// COMING SOON PAGE LOGIC
+// ========================================
+
+// Check if we should show the coming soon page
+if (SHOW_COMING_SOON) {
+    document.addEventListener('DOMContentLoaded', function () {
+        // Show coming soon overlay
+        const comingSoonOverlay = document.getElementById('coming-soon-overlay');
+        if (comingSoonOverlay) {
+            comingSoonOverlay.style.display = 'block';
+        }
+
+        // Hide main website content (header, main, footer)
+        const header = document.querySelector('header');
+        const main = document.querySelector('main');
+        const footer = document.querySelector('footer');
+
+        if (header) header.style.display = 'none';
+        if (main) main.style.display = 'none';
+        if (footer) footer.style.display = 'none';
+
+        // Also hide language overlay if present
+        const languageOverlay = document.getElementById('language-overlay');
+        if (languageOverlay) {
+            languageOverlay.style.display = 'none';
+        }
+    });
+}
 
 // ========================================
 // DEVICE DETECTION AND TAMIL TEXT OPTIMIZATION
