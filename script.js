@@ -32,13 +32,13 @@ let currentLang = 'en';
 function detectAndOptimizeForAndroid() {
     const isAndroid = /Android/i.test(navigator.userAgent);
     const isTamil = document.documentElement.lang === 'ta';
-    
+
     if (isAndroid && isTamil) {
         console.log('Android device detected with Tamil language - applying optimizations');
-        
+
         // Add Android-specific class for additional CSS targeting
         document.body.classList.add('android-tamil');
-        
+
         // Force reflow to ensure proper text rendering
         setTimeout(() => {
             const elements = document.querySelectorAll('h1, h2, h3, p, .btn');
@@ -54,7 +54,7 @@ function applyTamilOptimizations() {
     if (currentLang === 'ta') {
         document.documentElement.lang = 'ta';
         detectAndOptimizeForAndroid();
-        
+
         // Additional mobile optimizations
         if (window.innerWidth <= 768) {
             // Adjust viewport for better Tamil text rendering
@@ -69,11 +69,11 @@ function applyTamilOptimizations() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // ========================================
     // NAVIGATION AND HEADER FUNCTIONALITY
     // ========================================
-    
+
     /**
      * Header scroll behavior and mobile menu functionality
      * 
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
      * CSS classes used:
      * - .scrolled - Defined in styles.css for enhanced header styling
      */
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const currentScroll = window.pageYOffset;
 
         // Add/remove scrolled class based on scroll position
@@ -133,13 +133,13 @@ document.addEventListener('DOMContentLoaded', function() {
      * CSS classes used:
      * - .active - Defined in styles.css for mobile menu visibility
      */
-    mobileMenuBtn.addEventListener('click', function() {
+    mobileMenuBtn.addEventListener('click', function () {
         this.classList.toggle('active');
         navLinks.classList.toggle('active');
     });
 
     // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', function (event) {
         if (!event.target.closest('nav') && navLinks.classList.contains('active')) {
             mobileMenuBtn.classList.remove('active');
             navLinks.classList.remove('active');
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close mobile menu when clicking a link
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function () {
             mobileMenuBtn.classList.remove('active');
             navLinks.classList.remove('active');
         });
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========================================
     // FAQ ACCORDION FUNCTIONALITY
     // ========================================
-    
+
     /**
      * FAQ ACCORDION SYSTEM
      * 
@@ -175,20 +175,20 @@ document.addEventListener('DOMContentLoaded', function() {
      * - .faq-answer - Answer content that shows/hides
      */
     const faqItems = document.querySelectorAll('.faq-item');
-    
+
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
-        
+
         question.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
-            
+
             // Close all other FAQ items
             faqItems.forEach(otherItem => {
                 if (otherItem !== item) {
                     otherItem.classList.remove('active');
                 }
             });
-            
+
             // Toggle the clicked item
             item.classList.toggle('active');
         });
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========================================
     // SMOOTH SCROLL NAVIGATION
     // ========================================
-    
+
     /**
      * SMOOTH SCROLL NAVIGATION SYSTEM
      * 
@@ -216,33 +216,33 @@ document.addEventListener('DOMContentLoaded', function() {
      * - #faq -> section#faq
      */
     const navLinkElements = document.querySelectorAll('.nav-links a');
-    
+
     navLinkElements.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
-            
+
             // Get the target section id from the href
             const targetId = this.getAttribute('href').substring(1);
             let targetSection;
-            
+
             // Handle home link
             if (targetId === 'home') {
                 targetSection = document.querySelector('.hero-section');
             } else {
                 targetSection = document.getElementById(targetId);
             }
-            
+
             if (targetSection) {
                 // Calculate the target position with offset for header
                 const headerHeight = header.offsetHeight;
                 const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                
+
                 // Smooth scroll with easing
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
-                
+
                 // Close mobile menu if open
                 const mobileNav = document.querySelector('.nav-links');
                 if (mobileNav.classList.contains('active')) {
@@ -270,34 +270,34 @@ document.addEventListener('DOMContentLoaded', function() {
  * CSS classes used:
  * - .active - Defined in styles.css for active navigation styling
  */
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const sections = document.querySelectorAll('section');
     const navigationLinks = document.querySelectorAll('.nav-links a');
     const headerHeight = document.querySelector('header').offsetHeight;
-    
+
     let current = '';
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop - headerHeight - 100;
         const sectionHeight = section.clientHeight;
-        
+
         if (pageYOffset >= sectionTop) {
             current = section.getAttribute('id');
         }
     });
-    
+
     // Handle home section
     if (pageYOffset < 100) {
         current = 'home';
     }
-    
+
     navigationLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href').substring(1) === current) {
             link.classList.add('active');
         }
     });
-}); 
+});
 
 // ========================================
 // MODAL FUNCTIONALITY
@@ -332,7 +332,7 @@ function closeModal(modalId) {
 }
 
 // Close modal when clicking outside
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target.classList.contains('modal')) {
         event.target.style.display = 'none';
         document.body.style.overflow = '';
@@ -340,7 +340,7 @@ window.onclick = function(event) {
 }
 
 // Close modal with Escape key
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
         const modals = document.getElementsByClassName('modal');
         for (let modal of modals) {
@@ -353,10 +353,10 @@ document.addEventListener('keydown', function(event) {
 });
 
 // Prevent default behavior for modal links
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const modalLinks = document.querySelectorAll('a[href="#"]');
     modalLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             if (this.getAttribute('onclick')?.includes('openModal')) {
                 e.preventDefault();
             }
@@ -389,18 +389,18 @@ document.addEventListener('DOMContentLoaded', function() {
  * - .carousel-indicator - Defined in styles.css for dot indicators
  * - .active - Defined in styles.css for active indicator
  */
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const carousel = document.getElementById('social-carousel');
     const prevBtn = document.getElementById('social-prev');
     const nextBtn = document.getElementById('social-next');
     const indicatorsContainer = document.getElementById('social-indicators');
-    
+
     if (!carousel || !prevBtn || !nextBtn || !indicatorsContainer) return;
-    
+
     const slides = carousel.querySelectorAll('.carousel-slide');
     const totalSlides = slides.length;
     let currentSlide = 0;
-    
+
     // Create indicators
     function createIndicators() {
         indicatorsContainer.innerHTML = '';
@@ -412,64 +412,64 @@ document.addEventListener('DOMContentLoaded', function() {
             indicatorsContainer.appendChild(indicator);
         }
     }
-    
+
     // Update carousel position
     function updateCarousel() {
         const translateX = -currentSlide * 100;
         carousel.style.transform = `translateX(${translateX}%)`;
-        
+
         // Update indicators
         const indicators = indicatorsContainer.querySelectorAll('.carousel-indicator');
         indicators.forEach((indicator, index) => {
             indicator.classList.toggle('active', index === currentSlide);
         });
     }
-    
+
     // Go to specific slide
     function goToSlide(slideIndex) {
         currentSlide = slideIndex;
         updateCarousel();
     }
-    
+
     // Next slide
     function nextSlide() {
         currentSlide = (currentSlide + 1) % totalSlides;
         updateCarousel();
     }
-    
+
     // Previous slide
     function prevSlide() {
         currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
         updateCarousel();
     }
-    
+
     // Event listeners
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
-    
+
     // Auto-play (optional)
     let autoPlayInterval;
-    
+
     function startAutoPlay() {
         autoPlayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
     }
-    
+
     function stopAutoPlay() {
         clearInterval(autoPlayInterval);
     }
-    
+
     // Start auto-play
     startAutoPlay();
-    
+
     // Pause auto-play on hover
     const carouselContainer = carousel.closest('.carousel-container');
     if (carouselContainer) {
         carouselContainer.addEventListener('mouseenter', stopAutoPlay);
         carouselContainer.addEventListener('mouseleave', startAutoPlay);
     }
-    
+
     // Keyboard navigation
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (carouselContainer && carouselContainer.matches(':hover')) {
             if (e.key === 'ArrowLeft') {
                 e.preventDefault();
@@ -480,32 +480,32 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-    
+
     // Touch/swipe support
     let startX = 0;
     let startY = 0;
     let isDragging = false;
-    
-    carousel.addEventListener('touchstart', function(e) {
+
+    carousel.addEventListener('touchstart', function (e) {
         startX = e.touches[0].clientX;
         startY = e.touches[0].clientY;
         isDragging = true;
         stopAutoPlay();
     });
-    
-    carousel.addEventListener('touchmove', function(e) {
+
+    carousel.addEventListener('touchmove', function (e) {
         if (!isDragging) return;
         e.preventDefault();
     });
-    
-    carousel.addEventListener('touchend', function(e) {
+
+    carousel.addEventListener('touchend', function (e) {
         if (!isDragging) return;
-        
+
         const endX = e.changedTouches[0].clientX;
         const endY = e.changedTouches[0].clientY;
         const diffX = startX - endX;
         const diffY = startY - endY;
-        
+
         // Only trigger swipe if horizontal movement is greater than vertical
         if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
             if (diffX > 0) {
@@ -514,11 +514,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 prevSlide();
             }
         }
-        
+
         isDragging = false;
         startAutoPlay();
     });
-    
+
     // Initialize
     createIndicators();
     updateCarousel();
@@ -560,15 +560,15 @@ document.addEventListener('DOMContentLoaded', function() {
  * Dependencies:
  * - translations.js - Contains all translation data
  */
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const languageToggle = document.getElementById('language-toggle');
     const langDisplay = document.getElementById('lang-display');
-    
+
     if (!languageToggle || !langDisplay) return;
-    
+
     // Get current language from localStorage or default to English
     // Note: currentLang is now set by the overlay system above
-    
+
     // Initialize language display
     window.updateLanguageDisplay = function updateLanguageDisplay() {
         // Show the language that is NOT currently selected
@@ -578,46 +578,46 @@ document.addEventListener('DOMContentLoaded', function() {
             langDisplay.textContent = 'EN';
         }
     }
-    
+
     // Create subtle click sound
     function createClickSound() {
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
         const oscillator = audioContext.createOscillator();
         const gainNode = audioContext.createGain();
-        
+
         oscillator.connect(gainNode);
         gainNode.connect(audioContext.destination);
-        
+
         oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
         oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.1);
-        
+
         gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
         gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
-        
+
         oscillator.start(audioContext.currentTime);
         oscillator.stop(audioContext.currentTime + 0.1);
     }
-    
+
     // Toggle language with enhanced UX
     function toggleLanguage() {
         // Add loading state
         languageToggle.classList.add('loading');
-        
+
         // Disable button temporarily
         languageToggle.disabled = true;
-        
+
         // Add haptic feedback (if supported)
         if (navigator.vibrate) {
             navigator.vibrate(50);
         }
-        
+
         // Add subtle sound effect (if user hasn't disabled sounds)
         try {
             createClickSound();
         } catch (e) {
             // Ignore audio errors
         }
-        
+
         // Toggle language after a brief delay for smooth animation
         setTimeout(() => {
             currentLang = currentLang === 'en' ? 'ta' : 'en';
@@ -625,10 +625,10 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('languageSelected', 'true'); // Mark as user has selected language
             updateLanguageDisplay();
             translateContent();
-            
+
             // Update tooltip
             languageToggle.title = currentLang === 'en' ? 'Switch to Tamil' : 'Switch to English';
-            
+
             // Remove loading state
             setTimeout(() => {
                 languageToggle.classList.remove('loading');
@@ -636,23 +636,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 300);
         }, 150);
     }
-    
+
     // Translate all content based on current language
     window.translateContent = function translateContent() {
         const lang = translations[currentLang];
         if (!lang) return;
-        
+
         // Update Content-Language meta tag
         const contentLanguageMeta = document.getElementById('contentLanguageMeta');
         if (contentLanguageMeta) {
             contentLanguageMeta.content = currentLang;
         }
-        
+
         // Add data-translate="no" to all translatable elements
         document.querySelectorAll('[id^="nav-"], [id^="hero-"], [id^="about-"], [id^="philosophy-"], [id^="surabhi-"], [id^="social-"], [id^="plans-"], [id^="how-it-works-"], [id^="testimonials-"], [id^="faq-"], [id^="footer-"]').forEach(el => {
             el.setAttribute('data-translate', 'no');
         });
-        
+
         // Update navigation
         updateTextContent('nav-home', lang.nav.home);
         updateTextContent('nav-about', lang.nav.about);
@@ -660,7 +660,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextContent('nav-csr', lang.nav.csr);
         updateTextContent('nav-faq', lang.nav.faq);
         updateTextContent('nav-contact', lang.nav.contactUs);
-        
+
         // Update hero section
         updateTextContent('hero-rating', lang.hero.ratingText);
         updateTextContent('hero-reviews', lang.hero.reviewCount);
@@ -668,27 +668,27 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextContent('hero-subtitle', lang.hero.subtitle);
         updateTextContent('hero-get-started', lang.hero.getStarted);
         updateTextContent('hero-learn-more', lang.hero.learnMore);
-        
+
         // Update trust seals
         updateTextContent('trust-registered', lang.hero.trustSeals.registered);
         updateTextContent('trust-customers', lang.hero.trustSeals.customers);
         updateTextContent('trust-experience', lang.hero.trustSeals.experience);
-        
+
         // Update badges
         updateTextContent('badge-secure', lang.hero.badges.secure);
         updateTextContent('badge-returns', lang.hero.badges.returns);
         updateTextContent('badge-tax', lang.hero.badges.tax);
-        
+
         // Update about section
         updateTextContent('about-subtitle', lang.about.subtitle);
         updateTextContent('about-title', lang.about.title);
         updateTextContent('about-description', lang.about.description);
-        
+
         // Update stats
         updateTextContent('stat-members-label', lang.about.stats.membersLabel);
         updateTextContent('stat-rating-label', lang.about.stats.ratingLabel);
         updateTextContent('stat-years-label', lang.about.stats.yearsLabel);
-        
+
         // Update feature cards
         updateTextContent('feature-regulated-title', lang.about.features.regulated.title);
         updateTextContent('feature-regulated-desc', lang.about.features.regulated.description);
@@ -703,10 +703,10 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextContent('feature-remote-desc', lang.about.features.remote.description);
         updateTextContent('feature-loan-title', lang.about.features.loan.title);
         updateTextContent('feature-loan-desc', lang.about.features.loan.description);
-        
+
         // Update experience badge
         updateTextContent('experience-badge-text', lang.about.experienceBadge);
-        
+
         // Update Surabhi Group section
         updateTextContent('surabhi-subtitle', lang.surabhi.subtitle);
         updateTextContent('surabhi-title', lang.surabhi.title);
@@ -736,19 +736,19 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextContent('surabhi-years-label', lang.surabhi.achievements.yearsLabel);
         updateTextContent('surabhi-customers-label', lang.surabhi.achievements.customersLabel);
         updateTextContent('surabhi-assets-label', lang.surabhi.achievements.assetsLabel);
-        
+
         // Update social welfare section
         updateTextContent('social-subtitle', lang.socialWelfare.subtitle);
         updateTextContent('social-title', lang.socialWelfare.title);
         updateTextContent('social-description', lang.socialWelfare.description);
-        
+
         // Update impact stats
         updateTextContent('social-profits-label', lang.socialWelfare.impact.profitsLabel);
         updateTextContent('social-schools-label', lang.socialWelfare.impact.schoolsLabel);
         updateTextContent('social-students-label', lang.socialWelfare.impact.studentsLabel);
         updateTextContent('social-district-name', lang.socialWelfare.impact.districtName);
         updateTextContent('social-district-label', lang.socialWelfare.impact.districtLabel);
-        
+
         // Update commitment section
         updateTextContent('social-commitment-title', lang.socialWelfare.commitment.title);
         updateTextContent('social-commitment-desc', lang.socialWelfare.commitment.description);
@@ -758,22 +758,22 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextContent('social-feature2-desc', lang.socialWelfare.commitment.features.feature2.description);
         updateTextContent('social-feature3-title', lang.socialWelfare.commitment.features.feature3.title);
         updateTextContent('social-feature3-desc', lang.socialWelfare.commitment.features.feature3.description);
-        
+
         // Update gallery section
         updateTextContent('social-gallery-title', lang.socialWelfare.gallery.title);
-        
+
         // Update ongoing commitment section
         updateTextContent('social-ongoing-title', lang.socialWelfare.ongoing.title);
         updateTextContent('social-ongoing-desc', lang.socialWelfare.ongoing.description);
         updateTextContent('social-highlight1', lang.socialWelfare.ongoing.highlights.highlight1);
         updateTextContent('social-highlight2', lang.socialWelfare.ongoing.highlights.highlight2);
         updateTextContent('social-highlight3', lang.socialWelfare.ongoing.highlights.highlight3);
-        
+
         // Update plans section
         updateTextContent('plans-subtitle', lang.plans.subtitle);
         updateTextContent('plans-title', lang.plans.title);
         updateTextContent('plans-description', lang.plans.description);
-        
+
         // Update starter plans
         updateTextContent('plans-starter-title', lang.plans.starter.title);
         updateTextContent('plans-starter-range', lang.plans.starter.range);
@@ -781,7 +781,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextContent('plans-starter-feature1', lang.plans.starter.features.feature1);
         updateTextContent('plans-starter-feature2', lang.plans.starter.features.feature2);
         updateTextContent('plans-starter-feature3', lang.plans.starter.features.feature3);
-        
+
         // Update growth plans
         updateTextContent('plans-growth-title', lang.plans.growth.title);
         updateTextContent('plans-growth-range', lang.plans.growth.range);
@@ -789,7 +789,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextContent('plans-growth-feature1', lang.plans.growth.features.feature1);
         updateTextContent('plans-growth-feature2', lang.plans.growth.features.feature2);
         updateTextContent('plans-growth-feature3', lang.plans.growth.features.feature3);
-        
+
         // Update premium plans
         updateTextContent('plans-premium-title', lang.plans.premium.title);
         updateTextContent('plans-premium-range', lang.plans.premium.range);
@@ -797,15 +797,15 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextContent('plans-premium-feature1', lang.plans.premium.features.feature1);
         updateTextContent('plans-premium-feature2', lang.plans.premium.features.feature2);
         updateTextContent('plans-premium-feature3', lang.plans.premium.features.feature3);
-        
+
         // Update plans note
         updateTextContent('plans-note', lang.plans.note);
-        
+
         // Update how it works section
         updateTextContent('how-subtitle', lang.howItWorks.subtitle);
         updateTextContent('how-title', lang.howItWorks.title);
         updateTextContent('how-description', lang.howItWorks.description);
-        
+
         // Update steps
         updateTextContent('how-step1-title', lang.howItWorks.steps.step1.title);
         updateTextContent('how-step1-desc', lang.howItWorks.steps.step1.description);
@@ -815,17 +815,17 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextContent('how-step3-desc', lang.howItWorks.steps.step3.description);
         updateTextContent('how-step4-title', lang.howItWorks.steps.step4.title);
         updateTextContent('how-step4-desc', lang.howItWorks.steps.step4.description);
-        
+
         // Update testimonials section
         updateTextContent('testimonials-subtitle', lang.testimonials.subtitle);
         updateTextContent('testimonials-title', lang.testimonials.title);
         updateTextContent('testimonials-description', lang.testimonials.description);
-        
+
         // Update FAQ section
         updateTextContent('faq-subtitle', lang.faq.subtitle);
         updateTextContent('faq-title', lang.faq.title);
         updateTextContent('faq-description', lang.faq.description);
-        
+
         // Update FAQ questions and answers
         updateTextContent('faq-q1', lang.faq.questions.q1);
         updateTextContent('faq-a1', lang.faq.questions.a1);
@@ -847,12 +847,12 @@ document.addEventListener('DOMContentLoaded', function() {
         updateTextContent('faq-a9', lang.faq.questions.a9);
         updateTextContent('faq-q10', lang.faq.questions.q10);
         updateTextContent('faq-a10', lang.faq.questions.a10);
-        
+
         // Update feedback section
         updateTextContent('feedback-title', lang.feedback.title);
         updateTextContent('feedback-description', lang.feedback.description);
         updateTextContent('feedback-button-text', lang.feedback.buttonText);
-        
+
         // Update document language and direction
         document.documentElement.lang = currentLang;
         if (currentLang === 'ta') {
@@ -861,7 +861,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.documentElement.dir = 'ltr';
         }
     }
-    
+
     // Helper function to update text content
     window.updateTextContent = function updateTextContent(id, text) {
         const element = document.getElementById(id);
@@ -874,14 +874,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-    
+
     // Event listener for language toggle
     languageToggle.addEventListener('click', toggleLanguage);
-    
+
     // Initialize on page load
     updateLanguageDisplay();
     translateContent();
-    
+
     // Set initial tooltip
     languageToggle.title = currentLang === 'en' ? 'Switch to Tamil' : 'Switch to English';
 });
@@ -935,7 +935,7 @@ document.addEventListener('DOMContentLoaded', function() {
  * All functionality is designed to work seamlessly across
  * modern browsers and mobile devices, with graceful degradation
  * for older browsers where necessary.
- */ 
+ */
 // ========================================
 // LANGUAGE SELECTION OVERLAY FUNCTIONALITY
 // ========================================
@@ -962,17 +962,17 @@ document.addEventListener('DOMContentLoaded', function() {
 // Make function globally accessible
 window.selectLanguage = function selectLanguage(lang) {
     console.log('Language selected:', lang); // Debug log
-    
+
     // Store language preference
     localStorage.setItem('language', lang);
     localStorage.setItem('languageSelected', 'true');
-    
+
     // Set current language
     currentLang = lang;
-    
+
     // Hide overlay with animation first
     hideLanguageOverlay();
-    
+
     // Wait a moment then update content
     setTimeout(() => {
         // Update language display in header (if functions exist)
@@ -981,21 +981,21 @@ window.selectLanguage = function selectLanguage(lang) {
         } else {
             console.log('updateLanguageDisplay function not found');
         }
-        
+
         // Translate content (if function exists)
         if (typeof translateContent === 'function') {
             translateContent();
         } else {
             console.log('translateContent function not found');
         }
-        
+
         // Update document language and apply optimizations
         document.documentElement.lang = lang;
         applyTamilOptimizations();
-        
+
         console.log('Language setup complete for:', lang);
     }, 100);
-    
+
     // Add subtle success feedback
     if (navigator.vibrate) {
         navigator.vibrate(100);
@@ -1021,7 +1021,7 @@ window.hideLanguageOverlay = function hideLanguageOverlay() {
     if (overlay) {
         overlay.classList.add('hidden');
         document.body.style.overflow = '';
-        
+
         // Remove overlay from DOM after animation completes
         setTimeout(() => {
             if (overlay && overlay.parentNode) {
@@ -1035,9 +1035,9 @@ window.hideLanguageOverlay = function hideLanguageOverlay() {
 function checkLanguagePreference() {
     const hasLanguagePreference = localStorage.getItem('languageSelected');
     const savedLanguage = localStorage.getItem('language');
-    
+
     console.log('Checking language preference:', { hasLanguagePreference, savedLanguage });
-    
+
     if (!hasLanguagePreference) {
         // First visit - show language overlay
         console.log('No language preference found, showing overlay');
@@ -1052,33 +1052,33 @@ function checkLanguagePreference() {
 }
 
 // Function to reset language preference (for testing)
-window.resetLanguagePreference = function() {
+window.resetLanguagePreference = function () {
     localStorage.removeItem('language');
     localStorage.removeItem('languageSelected');
     console.log('Language preference reset. Refresh the page to see the overlay.');
 }
 
 // Initialize language system on page load
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM loaded, initializing language system'); // Debug log
-    
+
     // Add event listeners to language buttons as backup
     const languageButtons = document.querySelectorAll('.language-option');
     languageButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const lang = this.getAttribute('data-lang');
             console.log('Button clicked, language:', lang);
             selectLanguage(lang);
         });
     });
-    
+
     // Check if user has language preference
     const preferredLanguage = checkLanguagePreference();
-    
+
     if (preferredLanguage) {
         // User has preference - load in preferred language
         currentLang = preferredLanguage;
-        
+
         // Wait a bit for other functions to be defined
         setTimeout(() => {
             if (typeof updateLanguageDisplay === 'function') {
