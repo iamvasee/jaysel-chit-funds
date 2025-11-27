@@ -2503,28 +2503,85 @@ html[lang="ta"] .philosophy-quote {
 }
 
 .gallery-photo {
-    min-width: 400px;
+    flex: 0 0 auto;
+    width: 300px;
     height: 300px;
     border-radius: 12px;
     overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+    scroll-snap-align: center;
     transition: transform 0.3s ease;
-    scroll-snap-align: start;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 .gallery-photo:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
-.gallery-photo span {
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 600;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+.gallery-photo:hover img {
+    transform: scale(1.1);
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    animation: zoomIn 0.3s ease;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
 }
 
 /* Responsive - Compact Cards */

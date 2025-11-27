@@ -1130,3 +1130,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     // If no preference, overlay will be shown and user will select
 });
+
+// ========================================
+// LIGHTBOX FUNCTIONALITY
+// ========================================
+
+window.openLightbox = function (imgElement) {
+    const modal = document.getElementById('lightbox-modal');
+    const modalImg = document.getElementById('lightbox-img');
+
+    if (modal && modalImg) {
+        modal.style.display = "flex";
+        modalImg.src = imgElement.src;
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+}
+
+window.closeLightbox = function () {
+    const modal = document.getElementById('lightbox-modal');
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+}
+
+// Close lightbox on escape key
+document.addEventListener('keydown', function (event) {
+    if (event.key === "Escape") {
+        closeLightbox();
+    }
+});
